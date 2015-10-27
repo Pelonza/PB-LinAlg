@@ -1,0 +1,166 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Systems and Matrices, Fall `14}\\
+	\bfseries{Activity 11:  Eigenvalues and Eigenvectors, Part 2}\\
+	%\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\\end{flushleft}
+\begin{flushleft}
+
+\section*{Warm-up:  Subspaces}
+Recall from Lesson 7...
+
+\vspace{0.1in}
+
+\textbf{Vector Subspace Theorem:} a nonempty subset $W$ of a vector space $V$ is a \textbf{subspace} of $V$ if it is closed under addition and scalar multiplication:
+
+\vspace{0.2in}
+
+(i) If $\vec{x},\vec{y}\in W$, then $\vec{x}+\vec{y}\in W$ \hspace{0.5in} (ii) If $\vec{x}\in W$ and $c\in \mathbb{R}$, then $c\vec{x} \in W$
+
+\vspace{0.2in}
+
+1) Sketch the lines: $y=x$ and $ y=x+1$.  One line is a subspace of $\mathbb{R}^2$, one is not. Decide, then explain your reasoning.
+
+\vspace{1.5in}
+
+\newpage
+
+\section*{Eigenspaces}
+
+2)a) In Activity 10 you had:
+$\textbf{A}=
+\begin{bmatrix} 
+1 & 1 \\ 4&1 
+\end{bmatrix}$
+ which had eigenvectors:
+$\vec{v}_1=\begin{bmatrix} 1 \\ 2 \end{bmatrix}$,
+and $\vec{v}_2=\begin{bmatrix} 1 \\ -2 \end{bmatrix}$. \\
+\hspace{0.12in} You also found that $\textbf{A}\vec{v}_1 = \begin{bmatrix} 3 \\ 6 \end{bmatrix}$. Sketch $\textbf{A}\vec{v}_1$ and $\vec{v}_1$ (on the same graph).
+
+\vspace{2in}
+
+b) Looking back at (1), what can you say about $span\{ \vec{v}_1 \}$? 
+
+\vspace{1in}
+
+c) Sketch $span\{ \vec{v}_2 \}$. Is $span\{ \vec{v}_2 \}$ a subspace of $\mathbb{R}^2$ ?   
+
+\vspace{2in}
+
+We call the $span\{ \vec{v}_i \}$ the \textbf{eigenspace} $\mathbb{E}_{\lambda}$. \\
+
+\vspace{0.2in}
+
+3) What is the dimension of each eigenspace?
+
+\newpage
+
+\section*{Repeated Eigenvalues}
+
+4) What are the eigenvalues and eigenvectors of: 
+$\textbf{H}=
+\begin{bmatrix}
+3 & 0 \\
+5 & 3
+\end{bmatrix}$
+
+\vspace{3in}
+
+Repeated eigenvalues sometimes have more than one eigenvector though.
+
+\vspace{0.1in}
+
+5) The eigenvalues for this matrix are $\lambda_{1,2}=1$ and $\lambda_3 = 2$. Find the eigenvectors associated with these eigenvalues for the matrix: 
+$\textbf{R}=
+\begin{bmatrix}
+0 & 0 & 2 \\
+-1 & 1 & 2 \\
+-1 & 0 & 3
+\end{bmatrix} $\\
+
+
+\newpage
+
+We know that eigenvectors always satisfy the 2nd property of vector subspaces (you should be able to explain why!). We also found above that the eigenspace from a single eigenvector is a valid subspace. However, notice that we wrote our eigenspace as $\mathbb{E}_{\lambda}$. But there are TWO eigenvectors with our double eigenvalue. 
+
+\vspace{0.2in}
+
+Let's denote the double eigenvalue, and its eigenvectors $\lambda_1 , \lambda_2$ and $\vec{v}_1 , \vec{v}_2$ respectively. 
+
+\vspace{0.2in}
+
+%6) Show that a linear combination of $\vec{v}_1$ and $\vec{v}_2$ (e.g. $\vec{v}_1 + \vec{v}_2$ ) is STILL an eigenvector for $\lambda_{1,2}$. In other words it satisfies the eigenvalue equation:\\
+%\begin{equation*}
+%\textbf{R}(\vec{v}_1 + \vec{v}_2 ) = \lambda_1 (\vec{v}_1 + \vec{v}_2 )
+%\end{equation*}
+
+%\vspace{1.75in}
+
+6) State all the eigenspaces and their corresponding dimension for \textbf{R}?
+
+\vspace{2in}
+
+7) Give a geometric interpretation of $span\{ \vec{v}_1 ,  \vec{v}_2 \}$ in $\mathbb{R}^3$ (3-d space). \\
+\textit{Hint: this is a special shape in $\mathbb{R}^3$}
+
+\vspace{1in}
+
+The algebraic multiplicity of an eigenvalue is the number of times it is a root (e.g. $a$ in $(\lambda -\lambda_i)^a$)\\
+The geometric multiplicity of an eigenvalue is the dimension of its corresponding eigenspace.\\
+8)a) Give the algebraic and geometric multiplicity for the eigenvalues of \textbf{R}.
+
+\vspace{1in}
+
+b) Give the algebraic and geometric multiplicity for the eigenvalues of \textbf{H}.
+
+\vspace{1in}
+
+c) How do the algebraic and geometric multiplicity compare to each other?
+
+\newpage
+
+\section*{Distinct Eigenvalues}
+
+There is very useful theorem about distinct eigenvalues:\\
+\textbf{Distinct Eigenvalue Theorem:}
+Let \textbf{A} be an $n \times n$ matrix. If $\lambda_1 , \lambda_2, \ldots , \lambda_p$ are distinct eigenvalues with corresponding eigenvectors $\vec{v}_1,\vec{v}_2, \ldots, \vec{v}_p$ then $\{ \vec{v}_1,\vec{v}_2, \ldots, \vec{v}_p \}$ is a set of linearly independent vectors. \\
+
+\vspace{0.1in}
+
+9)a) Find the eigenvalues and an eigenvectors for each value for: 
+$\textbf{W}=
+\begin{bmatrix}
+3 & 0 \\
+5 & 2 
+\end{bmatrix}$
+
+\vspace{2in}
+
+b) Show that the eigenvectors are linearly independent.
+
+\vspace{1.5in}
+
+10) There's something to be careful of with this theorem though...You found the eigenvectors for \textbf{R} in (3). Are the eigenvectors of \textbf{R} linearly independent?
+
+\vspace{1.5in}
+
+11) If the eigenvectors are linearly independent are you guaranteed to have distinct eigenvalues? 
+
+
+\end{flushleft}
+\end{document}

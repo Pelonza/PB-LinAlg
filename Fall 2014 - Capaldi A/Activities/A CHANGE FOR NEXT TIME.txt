@@ -1,0 +1,8 @@
+Activity 1:  Make the pairs of lines all use the same first line so they're quicker to plot, then change the trios of lines to match.
+
+Activity 6:  Remove 3d, it doesn't make sense until later in the worksheet.
+
+Activity 7:  Warm-up seems oddly placed.  Maybe remove it and include Span in this lesson?
+
+Activity 10 & 11: Seemed about 5-10 min too long.  Remove the middle (3x3) matrix in Act 10?  Maybe need something else.
+

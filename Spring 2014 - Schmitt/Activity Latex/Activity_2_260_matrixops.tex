@@ -1,0 +1,174 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 3:  Matrices, Systems and Row Operations}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  Homework problems are at the end.  The assignment will not be collected today, but may be collected in the future.
+
+\vspace{0.2in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to convert from a system of equations to a (augmented) matrix, and back.
+\item Be able to perform basic row operations on a matrix.
+\item Be able to identify row echelon form (REF), and be able to manipulate a matrix to be in REF.
+\item (Stretch Goal) Be able to identify reduced row echelon form (RREF) and manipulate a matrix to be in RREF.
+\end{enumerate}
+\vspace{0.1in}
+\section*{Algebra Warmup}
+Solve the following system of equations by elimination. Everytime you add two equations, or multiply by numbers, right out explicitly what you are adding together or multiplying by on the left.\\
+$\begin{array}{rrrcr}
+x+&y+&z&=&3\\
+2x-&2y-&z&=&-9\\
+-x+&y-&z&=&3
+\end{array}
+$
+
+\vspace{2in}
+Be sure and check your answers around your table.\\
+\section{Turning Systems into Matrices}
+Linear Algebra is a mathematical field designed to allow fast and easy solving of systems of equations, by denoting operations on the entire system succinctly. Notice it was rather messy to work with all those equations in the warmup excercise, imagine doing that for 5 variables or 15 variables and equations. There are two notations we use in Lin. Alg. to condense systems, \textit{Matrix-Vector Form} and \textit{Augmented Matrices}. Let's turn the system from the warmup into Matrix-Vector Form:
+a) First, re-write the system and replace the variables with: $x = x_1$, $y=x_2$, $z=x_3$. Notice they are all still different, but now we can just refer to them as variable 1, 2, or 3. \\
+We write all three together as a vector of size 3x1:$\textbf{\vec{x}}=\left[\begin{array}{c} x_1\\x_2\\x_3\end{array}\right]$\\
+\vspace{0.5in}
+b) Now write the coefficients (numbers by variables) from the 2nd equation as a \textit{vector} of size 1x3. Call it $\textbf{\vec{a}}$
+\vspace{0.5in}
+c) Multiply $\textbf{\vec{a}\cdot\vec{x}$. Does it look familiar? Discuss at your table some. \\
+\vspace{1in}
+d) Now make a matrix of the variable's coefficients, we'll call it \textbf{A} (write it out). What would $\textbf{A}\cdot\textbf{\vec{x}}$ be? (You don't need to do the multiplication, but discuss at your table)\\
+\vspace{0.5in}
+e) We're almost there\cdots . Finally, right the values on the right-hand side of the ='s as a 3x1 vector. Call it $\textbf{\vec{b}}$. \\
+\vspace{0.5in}
+f) Using the vectors $\textbf{\vec{x}}$, $\textbf{\vec{b}}$ and matrix \textbf{A}, try writing out the system of equations from the warmup. (We'll discuss the answer as a class)\\
+\vspace{0.25in}
+g) Augmented Matrix form is just a subset of these, where we keep just the coefficients (\textbf{A}) and the right-hand-side (\textbf{\vec{b}}). We write 
+Matrices for today's problems:\\
+
+$\textbf{A}=\left[
+\begin{array}{c}
+	2\\
+	4\\
+	-1\\
+\end{array}
+\right]
+$
+\hspace{.1in}
+$\textbf{B}=\left[
+\begin{array}{ccc}
+3 & 2 & -5
+\end{array}\right]$
+\hspace{.1in}
+
+$\textbf{C}=\left[
+\begin{array}{cc}
+1 & 4\\
+-3 & 5
+\end{array}
+\right]
+$
+\hspace{.1in}
+$\textbf{D}=\left[
+\begin{array}{cc}
+2 & 7x\\
+x^2 & 3x^3
+\end{array}
+\right]$
+\hspace{.1in}
+$\textbf{E}=\left[
+\begin{array}{ccc}
+3x & 8 & 2x^2 +1\\
+x & x^2+x & x^3
+\end{array}
+\right]
+$
+
+\section*{Warmup: Constants and Matrices}
+a) \hspace{.1in} Find $k\textbf{C}$ where $k$ is a constant. What is $k\textbf{C}$ if $k=3$?\\
+\vspace{1in}
+b)\hspace{.1in}Show that: $k\textbf{C}+g\textbf{C}=(k+g)\textbf{C}$ where $k$ and $g$ are constants. This is a `distributive' property. \\
+\vspace{1.25in}
+It is also true (you don't have to prove/show this one) that if \textbf{A} and \textbf{B} are both $m\times n$ matrices then: \\
+$k(\textbf{A}+\textbf{B})=k\textbf{A}+k\textbf{B}$ \\
+c)\hspace{.1in}Show that: $k(g\textbf{C})=(kg)\textbf{C}$. This is an `associtivity' property. \\
+
+\newpage
+\section*{Problem 1:Vectors, and Vectors with Matrices}
+\vspace{0.1in}
+Notes on finding expected dimensions of multiplication:\\
+\vspace{1in}
+a)\hspace{.1in} Find the expected dimension of \textbf{AB}, \textbf{BA}, and \textbf{BE}\\
+\vspace{1in}
+b)\hspace{.1in} Now calculate each product.\\
+\vspace{2.5in}
+\section*{Problem 2: Matrix on Matrix}
+a)\hspace{.1in} Find \textbf{CD}\\
+\vspace{1in}
+b) \hspace{.1in}Make a prediction: Is the statement:  $\textbf{CD} = \textbf{DC}$ true or false?\\
+\textit{Feel free to discuss this at your table!}\\
+\newpage
+c) \hspace{.1in}Find \textbf{DC}. Were you correct?\\
+\vspace{1.5in}
+d) \hspace{.1in}Can you find any matrices (\textbf{A} and \textbf{B}) for which $\textbf{AB}=\textbf{BA}$? Note that here, \textbf{A} and \textbf{B} are NOT the matrices given on page 1. \textit{Hint: This is a SPECIAL circumstance}\\
+\vspace{1in}
+\section*{Problem 3: More Matrix on Matrix}
+a) Which of these are true (give some reasoning, you don't \textit{have} to prove them):\\
+$(\textbf{AB})\textbf{C}=\textbf{A}+\textbf{BC}$ \hspace{0.2in} $\textbf{A}(\textbf{B}+\textbf{C})=\textbf{AB}+\textbf{AC}$ \hspace{0.2in} $(\textbf{B}+\textbf{C})\textbf{A}=\textbf{AB}+\textbf{CA}$\\
+\vspace{2in}
+b) Under certain circumstances we can raise a matrix to a power. Discuss at your table what some requirements might be, and what the resultant dimensions would be.\\
+\vspace{1in}
+\newpage
+c) Find $\textbf{CC}$.  This is equivalent to $\textbf{C}^2$. \\
+\vspace{1in}
+d) Find $\textbf{C}^3$. \textit{Hint: Use your result from (c) to reduce your work}\\
+\vspace{1in}
+e) Could you find $\textbf{D}^3$? What would it's dimensions be or if you can't find it why not?
+\vspace{0.75in}
+
+\section*{Problem 4: Transposing Matrices}
+We can find what's called the `transpose' of a matrix by flipping a matrix over its ``diagonal'' . This only works for square matrices, and lets us do some nifty solving later.... specifically to find the transpose of \textbf{A}, denoted by $\textbf{A}^\texttt{T}$ for all $i,j$ $[a_{ij}]^\texttt{T}=[a_{ji}]$\\
+a) Find $\textbf{C}^\texttt{T}$\\
+\vspace{1in}
+b) Predict how you think the transpose of \textbf{C} would change if we first multiplied by 3 (i.e. did: $(3\textbf{C})^\texttt{T}$ )\\
+\vspace{1in}
+\LARGE
+Homework:
+\normalsize
+\begin{enumerate}
+ \item Finish Worksheet (you may work with others on this)
+\item Find: $3\textbf{X}^2 + \textbf{Y}^T$ for \textbf{X} and \textbf{Y} given below. You will turn this in next week. You MUST show intermediate calculations to get full credit.
+\end{enumerate}
+
+$\textbf{X}=\left[
+\begin{array}{ccc}
+1 & 4 & 0\\
+-3 & 5 & 1\\
+1 & 0 & -6
+\end{array}
+\right]
+$
+\hspace{0.1in}
+$\textbf{Y}=\left[
+\begin{array}{ccc}
+0 & 1 & w\\
+1 & -z & 3\\
+0 & 9 & -4
+\end{array}
+\right]
+$
+
+
+\end{flushleft}
+\end{document}

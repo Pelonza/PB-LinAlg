@@ -1,0 +1,126 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Systems and Matrices, Fall `14}\\
+	\bfseries{Activity 7:  Vector Spaces and Subspaces}\\
+%	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+
+\section*{Warm-up:  Linear Combinations}
+
+Let's take two vectors in $\mathbb{R}^2$: $\vec{a}=<1,0>$ and $\vec{b}=<0,1>$.
+
+\vspace{0.1in}
+
+a) Write out how we can get the vector $<2,3>$ from the vectors $\vec{a}$ and $\vec{b}$ (how many $\vec{a}$'s and how many $\vec{b}$'s do we need?).
+
+\vspace{1.5in}
+
+We define a linear combination $\vec{v}$ of vectors $\vec{v_1}, \vec{v_2}, ... \vec{v_n}$ as: $\alpha_1 \vec{v_1} + \alpha_2 \vec{v_2} + ... + \alpha_n \vec{v_n} = \vec{v}$ for any scalar value of the $\alpha_i$s.
+
+\vspace{0.1in}
+
+b) Given the vectors $\vec{u} = <0,5>, \vec{v} = <2,-6>, \vec{a}=<1,2>$ and $\vec{b}=<3,1>$, write $\vec{u}$ as a linear combination of $\vec{a}$ and $\vec{b}$, then do the same for $\vec{v}$.
+
+\pagebreak
+ 
+c) Give two linear combinations, and how you got them, of the vectors: $\vec{c}=<1,0,0>$ and $\vec{d}=<-1,1,1>$.
+
+\vspace{1in}
+
+d) Can you give a non-trivial (\emph{ i.e.} don't multiply all the vectors by 0) linear combination which gives the zero vector: $\vec{0}=<0,0,0>$ of the vectors $\vec{c}$, $\vec{d}$ and $\vec{e}=<0,2,2>$. If yes, show it. If no, explain why not.
+
+\vspace{1in}
+
+e) Can you give a non-trivial combination to get the zero vector if you only have $\vec{c}$ and $\vec{d}$? If yes, show it. If no, explain why not.
+
+\vspace{1.25in}
+
+\section*{Vector Spaces}
+
+Vector spaces are (informally) a collection of similar objects that behave well when combined.  The `collection of similar objects' phrase means a vector space is a set, and the `behave well when combined' phrase means that they satisfy all the properties given in the definition on page 168 of our textbook.  (You're not expected to memorize these properties, but it's good to understand intuitively what they mean.)  Often, we care about subsets of vector spaces, and whether or not they themselves are vector spaces.  We call these things ``subspaces."
+
+\section*{Subspaces}
+
+\textbf{Vector Subspace Theorem:} a nonempty subset $W$ of a vector space $V$ is a \textbf{subspace} of $V$ if it is closed under addition and scalar multiplication:
+
+\vspace{0.2in}
+
+(i) If $\vec{x},\vec{y}\in W$, then $\vec{x}+\vec{y}\in W$ \hspace{0.5in} (ii) If $\vec{x}\in W$ and $c\in \mathbb{R}$, then $c\vec{x} \in W$
+
+\vspace{0.2in}
+
+This came from page 171 of our textbook.  This theorem is a little different from Khan Academy's.  This version implicitly includes the requirement that the zero vector is part of the subspace.
+
+\vspace{0.2in}
+
+Note that the Vector Subspace Theorem is basically saying that if you take any vectors that are in a subset (of a vector space), then for that subset to be a sub\emph{space}, \emph{all} linear combinations of those vectors are also in that subset.
+
+\pagebreak
+
+1) a) You are going to examine a subset of $\mathbb{R}^3$, which is $S=\left\{ (x,y,z)| z = x + y \right\}$.  Give two unique examples of ``vectors" in this subset.
+
+\vspace{1in}
+
+b) Does the subset satisfy the closure under vector addition property of a subspace?  Explain your reasoning (an example calculation may be helpful but is NOT sufficient by itself).
+
+\vspace{3in}
+
+c) Does the subset satisfy the closure under scalar multiplication property of a subspace? Explain your reasoning (again, an example calculation may be helpful but is NOT sufficient by itself).
+
+\vspace{3in}
+
+d) Is this subset a subspace of $\mathbb{R}^3$?
+
+\pagebreak
+
+2) a) Sketch the lines: $y=x$ and $ y=x+1$.  The set of vectors that lie on one of these lines is a subspace of $\mathbb{R}^2$, the other one is not. Decide, then explain your reasoning.
+
+\vspace{2.5in}
+
+b) Give an explanation of why the Vector Subspace Theorem includes the requirement that the zero vector is part of the subspace. \textit{Hint: If $\vec{0}$ were NOT in the subset, would a property be violated and when?}
+
+\vspace{1in}
+
+c) The Khan academy video showed that the subset: $W=\left\{ (x,y)|x\geq 0 \right\}$ was NOT a subspace of $\mathbb{R}^2$.  Is the subset $U=\left\{ (x,y)|x=0 \right\}$ a subspace? Show your reasoning.
+
+\vspace{1.5in}
+
+3) In problem 1, you found that $S=\left\{ (x,y,z)| z = x + y \right\}$ was a subspace of $\mathbb{R}^3$.  A similar subset would be $T=\left\{ (x,y,z)| z = x + 1 \right\}$.  This subset is NOT a subspace.  Why not?
+
+\pagebreak
+
+\section*{Describing Subspace by their ``Typical" Vector}
+
+4) Let's return to the subspace $S$ from problems 1 and 3.  We could express any generic element of $S$ as $(x,y,x+y)$.  Notice that we could rewrite this vector in a linear combination form:  $x(1,0,1) + y(0,1,1)$.  If we tried to do that with $T$, our generic element would be $(x,y,x+1) = x(1,0,1) + y(0,1,0) + (0,0,1)$.  Notice that we had to include an additional vector without a variable coefficient.  This causes issues for closure, which may be easier to see in this factored form.  Any subspace of $\mathbb{R}^n$ will be able to be written in a linear combination form like how we did for $S$, without any ``leftover" constant vectors as we saw with $T$.
+
+\vspace{0.2in}
+
+a) Give the generic element for the subset $H = \left\{ (x,y,z,w)| y = 2x - 3z, w=x \right\}$.
+
+\vspace{1in}
+
+b) Express the generic element in a linear combination form.
+
+\vspace{2in}
+
+c) Do you think that $H$ is a subspace of $\mathbb{R}^4$?  Verify by checking the closure properties.
+
+\end{flushleft}
+\end{document}

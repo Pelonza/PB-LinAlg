@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Homework 11, Spring `14}\\
+	\bfseries{Due: April 21, 2014}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Name:}\\
+	%\hspace{4.37in}\bfseries{Section:}
+\end{flushleft}
+\begin{flushleft}
+\vspace{.25in}
+
+As in Activity 11, we will use the matrix: $\textbf{A} = \begin{bmatrix} 1 & 1 \\ 4 & 1 \end{bmatrix}$ with eigenvalues $\lambda_1 = 3$ and $\lambda_2 = -1$ with corresponding eigenvectors $\vec{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\vec{v}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ respectively.
+
+\vspace{0.2in}
+
+Powering a diagonal matrix is easy: $\textbf{D}^k = \begin{bmatrix}
+d_1^k & 0 & \ldots & 0 \\
+0 & d_2^k & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & d_n^k
+\end{bmatrix}$.  However, powering any non-diagonal square matrix isn't quite as easy.  Let's see if we can abuse the diagonalizability of $\textbf{A}$ to make it easier, though.
+
+\vspace{0.2in}
+
+1) (8 pts) Compute $\textbf{PD}^2 \textbf{P}^{-1}$ and $\textbf{A}^2 $.  What do you notice?
+
+\vspace{3in}
+
+2) (8 pts) Compute $\textbf{PD}^3 \textbf{P}^{-1}$.  Is it equal to $\textbf{A}^3 = \begin{bmatrix} 13 & 7 \\ 28 & 13 \end{bmatrix}$?
+
+\vspace{3in}
+
+3) (14 pts) Give a general equation to compute $\textbf{A}^k$.  This works for every diagonalizable matrix $\textbf{A}$.  Why does this work?  Recall that $\textbf{A} = \textbf{PDP}^{-1}$.
+
+\end{flushleft}
+\end{document}

@@ -1,0 +1,132 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 5:  Matrix Inverses}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+\begin{center} \large The worksheet is due by the end of the day (5pm). \normalsize \\
+
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to find the inverse of a matrix.
+\item Be able to identify several characteristics of an invertible matrix. 
+\item Be able to state the number of solutions to a matrix-vector equation, based on invertibility.
+\end{enumerate}
+\vspace{0.1in}
+\section*{Warmup: RREF Review}
+\end{center}
+
+Find the RREF of the following matrix:\\
+\begin{center}
+$\begin{bmatrix}[cc|cc]
+1 & 1 &  1 & 0 \\
+4 & 1 &  0 & 1 \\
+
+\end{bmatrix}
+$\\
+\end{center}
+\vspace{2in}
+Congratulations! You've found your first matrix inverse.
+\newpage
+\begin{center}
+\section{The Identity Matrix and Inverses}
+\end{center}
+Notice that the right-hand side (RHS) of the warmup started as the identity matrix. The warmup exercise could be stated as: $[\textbf{A}|\textbf{I}]$. Reducing this combined matrix into RREF is the simplest way to find the inverse of a matrix. The inverse of the matrix \textbf{A} is the RHS after getting the left-side into RREF.\\
+\vspace{0.1in}
+a) One trait of the inverse is that the statement: $\textbf{A} \textbf{A}^{-1} = \textbf{I} $. Verify this is true for the warmup.\\
+\vspace{1.5in}
+b) Another trait if a matrix has an inverse, then its transpose has an inverse. Let's check that:\\
+(i) Find $\textbf{A}^T$. Recall that the transpose is defined as: $[a_{ij}]^T = [a_{ji}]$\\
+\vspace{1.5in}
+(ii) Find the inverse of $\textbf{A}^T$. \textit{Hint: start with the matrix  $\left[ A^T | I \right] $ }\\
+\vspace{2in}
+c) Another practice. Obtain the inverse of the following matrix using row operations and RREF.\\
+\begin{center}
+$\begin{bmatrix}[ccc]
+1 & 1 & 1 \\
+0 & 2 & 1 \\
+1 & 0 & 1 
+\end{bmatrix}$
+
+\newpage
+\section{A Use for the Inverse}
+\end{center}
+a) How did we use RREF to find solutions to the matrix-vector equation: $\textbf{A} \vec{\textbf{x}} = \vec{\textbf{b}}$?\\
+\vspace{1in}
+b) If we do the same operations to find a RREF, can't we use the inverse to find an answer too...?\\
+(i) Solve the following system by finding the RREF of the \textbf{\textit{augmented}} matrix:\\
+\begin{center}
+$\begin{array}{rrrrr}
+x & + & y & = & -1\\
+4x & + & y & = & -7
+\end{array}
+$ \\ \end{center}
+\vspace{2in}
+(ii) Now multiply the inverse you found in the warmup by $\vec{\textbf{b}}=\begin{bmatrix} -1 \\ -7 \end{bmatrix}$ \\
+\vspace{1.5in}
+c) Discuss your results at your table, and write down observations. Here's a little guidance... \\
+Left multiply each side of the equation $\textbf{A}\vec{\textbf{x}}=\vec{\textbf{b}}$ by $\textbf{A}^{-1}$ and compare to answers you've obtained so far...
+\vspace{2in}
+\newpage
+\begin{center}
+\section{More Solutions...}
+\end{center}
+a) Find the inverse of the matrix:
+\begin{center}
+$\textbf{C} = 
+\begin{bmatrix}[rrr]
+3 & 0 & 3\\
+-1 & 2 & 1\\
+1 & 1 & 2
+\end{bmatrix}
+$\\\end{center}
+\vspace{2in}
+b) What happened? Based on your exploration in Section 2, if this matrix described a system, do you think it has a unique answer? Support your response, and discuss at your table. (This is a good place to check in once you've discussed)\\
+\vspace{2in}
+\Large
+Invertibility and Solutions (pg 151)\\
+\normalsize
+Notes:\\
+\vspace{1in}
+\begin{center}
+\section{Challenge}
+\end{center}
+Find a constant $a$ so each of the following matrices are invertible. If no such $a$ exists, says so and explain why. (Problems 32 \& 33 from pg 155)\\
+\begin{center}
+$\textbf{H}= \begin{bmatrix}
+1 & 0 & a\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix} $
+\hspace{1in}
+$\textbf{T}= \begin{bmatrix}
+1 & 0 & 1\\
+0 & 1 & 0\\
+a & a & a
+\end{bmatrix} $
+\end{center}
+
+\end{flushleft}
+\end{document}

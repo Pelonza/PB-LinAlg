@@ -1,0 +1,174 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 11:  Diagonalization}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+If you need more explanations after class, you can read Section 5.4 of your textbook.\\
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able diagonalize a matrix
+\item Be able to identify matrices that cannot be diagonalized
+\item (Stretch/Homework) Be able to use the diagonalization of a matrix to find a matrix power or check similarity
+%\item Be able to determine if a set of vectors is a basis for a vector space
+%\item (stretch) Be able to find the dimension of a set or space (by the end of homework for sure!)
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\section*{Warm-up:  Eigenvectors and Spaces of Repeated Roots}
+%This is the matrix from Sect. 5.4, pg 339, #43
+
+$\textbf{G}
+=\begin{bmatrix}
+1 & 0 & 0\\
+-4 & 3 & 0 \\
+-4 & 2 & 1
+\end{bmatrix}
+$
+\hspace{0.5in}
+The eigenvalues of \textbf{G} are $\lambda_{1,2}=1$ and $\lambda_3 = 3$. 
+
+\vspace{0.25in}
+1. If I had asked you to find the eigenvalues of \textbf{G}, you would NOT need to calculate $det(\textbf{G}-\lambda \textbf{I})=0$. Explain why.
+
+\vspace{1in}
+
+2. Find the three eigenvectors associated with the given eigenvalues.
+
+\vspace{3in}
+
+3. What is the dimension of each corresponding eigenspace? What is the sum of the eigenspace dimensions for \textbf{G}?
+
+\vspace{1in}
+
+\section*{Diagonalized Equations}
+Define two matrices: $\textbf{P} = \begin{bmatrix}
+| & | & & |\\
+\vec{v}_1 & \vec{v}_2 & \ldots &\vec{v}_n \\
+| & | & & |
+\end{bmatrix} $
+\hspace{0.5in}
+$\textbf{D} = \begin{bmatrix}
+\lambda_1 & 0 & \ldots & 0 \\
+0 & \lambda_2 & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & \lambda_n 
+\end{bmatrix} $
+
+\vspace{0.1in}
+
+We are going to check some matrix equations using \textbf{P}, $\textbf{P}^{-1}$ and \textbf{D}. 
+For each of the following be sure to show some intermediate steps, since we already know what the final result should be!
+
+\vspace{0.1in}
+
+For \# 4-8 use the matrix: $\textbf{A} = \begin{bmatrix} 1 & 1 \\ 4 & 1 \end{bmatrix}$ \hspace{0.2in} with eigenvalues $\lambda_1 = 3$ and $\lambda_2 = -1$ with corresponding eigenvectors $\vec{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\vec{v}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ respectively.
+
+\vspace{0.2in}
+
+4. Find $\textbf{AP}$ and $\textbf{PD}$. How do they compare?
+
+\vspace{2.5in}
+
+5. Find $\textbf{PDP}^{-1}$. What does it equal that we have already defined? \\
+\textit{Hint: You already calculated $\textbf{PD}$ you just need to find $\textbf{P}^{-1}$, and do one multiplication}
+
+\vspace{2.5in}
+
+6. Find $\textbf{P}^{-1} \textbf{AP}$. What does it equal that we have already defined?\\
+\textit{Hint: You only need to do ONE new multiplication here!}
+
+\vspace{2in}
+
+7. Write all three of the equations you have calculated above here, using the variables \textbf{A}, \textbf{P}, \textbf{D}, and $\textbf{P}^{-1}$. \\
+\textit{This is a good place to check with your table, and professor to be sure everything came out right!}
+
+\vspace{1in}
+
+8. a) Define the matrix $\textbf{F}=\begin{bmatrix} \lambda_2 & 0 \\ 0 & \lambda_1 \end{bmatrix} = \begin{bmatrix} -1 & 0 \\ 0 & 3 \end{bmatrix}$, and use the same \textbf{P} as above. Find $\textbf{PFP}^{-1}$. 
+
+\vspace{2.5in}
+
+8. b) Does it matter to the equations you wrote in \# 6 what order the eigenvalues and eigenvectors are in \textbf{P} and \textbf{D}? What relationship is required between \textbf{P} and \textbf{D}?
+
+\vspace{1in}
+
+\section*{Diagonalizing with Repeated Eigenvalues}
+9. In the warm-up you found the eigenvectors for a matrix with a repeated eigenvalue, but which had 3 linearly independent eigenvectors. Pick your favorite equation from \# 6. Is the equation valid for \textbf{G}?
+
+\vspace{2.5in}
+
+%The matrix below is from Sect 5.4, pg 339, #29
+10. The matrix $\begin{bmatrix} 3 & 1 \\ -1 & 5 \end{bmatrix}$ has a repeated eigenvalue of 4, with one eigenvector of $\vec{v}_1=\begin{bmatrix} 1 \\ 1 \end{bmatrix}$. \\
+If we let $\textbf{P}=\begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}$ and $\textbf{D} = \begin{bmatrix} 4 & 0 \\ 0 & 4 \end{bmatrix}$. Does the equation $\textbf{A} = \textbf{PDP}^{-1}$ still hold? \\
+
+\textit{ Hint: Think about \textbf{P}. What is $det(\textbf{P})$? What does that tell you about $\textbf{P}^{-1}$? }
+
+\vspace{2in}
+
+11. If the results from \# 9 and \# 10 are generalizable (they are), what must be true about a matrix for us to diagonalize it?
+
+\vspace{1in}
+
+%\section*{Applications of Diagonalization: Matrix Powers}
+%We are again going to use the matrix: $\textbf{A} = \begin{bmatrix} 1 & 1 \\ 4 & 1 \end{bmatrix}$ \hspace{0.2in} with eigenvalues $\lambda_1 = 3$ and $\lambda_2 = -1$ with corresponding eigenvectors $\vec{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $\vec{v}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}$ respectively.
+%
+%\vspace{0.1in}
+%
+%12. Compute $\textbf{PD}^2 \textbf{P}^{-1}$ and $\textbf{A}^2 $. What do you notice?
+%
+%\vspace{2.5in}
+%
+%13. Compute $\textbf{PD}^3 \textbf{P}^{-1}$. Is it equal to $\textbf{A}^3 = \begin{bmatrix} 13 & 7 \\ 28 & 13 \end{bmatrix}$?
+%
+%\vspace{2in}
+%
+%14. Give a general equation to compute $\textbf{A}^k$.
+%
+%\vspace{1in}
+
+%\subsection*{Similar Matrices}
+%For this problem we'll use the matrices:\\
+%$\textbf{X}=\begin{bmatrix} 4 & -2 \\ 1 & 1 \end{bmatrix}$ 
+%\hspace{0.25in}
+%$\textbf{Y}=\begin{bmatrix} -3 & 10 \\ -3 & 8 \end{bmatrix}$\\
+%Their associated \textbf{P} matrices are: \\
+%$\textbf{P}_X = \begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}$
+%\hspace{0.25in}
+%$\textbf{P}_Y = \begin{bmatrix} 5 & 2 \\ 3 & 1 \end{bmatrix}$
+%
+%\vspace{0.2in}
+%
+%15. Find $\textbf{P}_X \textbf{X} \textbf{P}^{-1}_X$ and $\textbf{P}_Y \textbf{Y} \textbf{P}^{-1}_Y$.
+%
+%\vspace{3in}
+%
+%16. Find the trace and determinant of \textbf{X} and \textbf{Y}.
+
+
+\end{flushleft}
+\end{document}

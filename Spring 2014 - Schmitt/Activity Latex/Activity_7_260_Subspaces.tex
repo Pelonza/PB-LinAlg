@@ -1,0 +1,142 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 7:  Vector Spaces and Subspaces}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+\large The worksheet is due by the end of the day (5pm). \normalsize \\ 
+If you need more explanations after class, you can read Section 3.5 of your textbook.\\
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to identify a vector space
+\item Be able to calculate linear combinations and multiples of vectors
+\item Be able to verify or disprove a set as a subspaces by the subspace theorem
+\item Be able to give non-trivial subspaces of common spaces
+%\item (Stretch) Discover several properties of determinants including if a matrix has an inverse.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\section*{Warm-up:  Linear Combinations}
+
+Let's take two vectors in $\mathbb{R}^2$: $\vec{a}=<1,0>$ and $\vec{b}=<0,1>$.
+
+\vspace{0.1in}
+
+a) Write out how we can get the vector $<2,3>$ from the vectors $\vec{a}$ and $\vec{b}$ (how many $\vec{a}$'s and how many $\vec{b}$'s do we need?).
+
+\vspace{1.5in}
+
+We define a linear combination of vectors as: $\alpha \vec{a} + \beta \vec{b} = \vec{c}$ for any scalar value of $\alpha, \beta$. It is similar to matrix addition and multiplication, were each element in the vector is multiplied by the scalar value, then we add values in the same location in each vector.
+
+\vspace{0.1in}
+
+b) How can we get the vectors $<0,5>$ and $<2,-4>$ from the vectors: $\vec{a}=<1,2>$ and $\vec{b}=<3,1>$
+
+\vspace{1.25in}
+ 
+c) Give two linear combinations, and how you got them, of the vectors: $\vec{c}=<1,0,0>$ and $\vec{d}=<-1,1,1>$
+
+\vspace{1in}
+
+d) Can you give a non-trivial (\emph{ i.e.} don't multiply all the vectors by 0) linear combination which gives the zero vector: $\vec{0}=<0,0,0>$ of the vectors $\vec{c}$, $\vec{d}$ and $\vec{e}=<0,2,2>$. If yes, show it. If no, explain why not. (This is a good place to discuss with your table!)
+
+\vspace{1in}
+
+e) Can you give a non-trivial combination to get the zero vector if you only have $\vec{c}$ and $\vec{d}$? If yes, show it. If no, explain why not. (This is a good place to discuss with your table!)
+
+\vspace{1.5in}
+
+\section*{Vector Spaces}
+
+Vector spaces are (informally) a collection of similar objects that behave well when combined.  The `collection of similar objects' phrase means a vector space is a set, and the `behave well when combined' phrase means that they satisfy all the properties given in the definition on page 168 of our textbook.  (You're not expected to memorize these properties, but it's good to understand intuitively what they mean.)  Often, we care about subsets of vector spaces, and whether or not they themselves are vector spaces.  We call these things ``subspaces."
+
+\section*{Subspaces}
+
+\textbf{Vector Subspace Theorem:} a nonempty subset $W$ of a vector space $V$ is a \textbf{subspace} of $V$ if it is closed under addition and scalar multiplication:
+
+\vspace{0.2in}
+
+(i) If $\vec{x},\vec{y}\in W$, then $\vec{x}+\vec{y}\in W$ \hspace{0.5in} (ii) If $\vec{x}\in W$ and $c\in \mathbb{R}$, then $c\vec{x} \in W$
+
+\vspace{0.2in}
+
+This came from page 171 of our textbook.  This theorem is a little different from Khan Academy's.  This version implicitly includes the requirement that the zero vector is part of the subspace.
+
+\vspace{0.2in}
+
+Note that the Vector Subspace Theorem is basically saying that if you take any vectors that are in a subset (of a vector space), then for that subset to be a sub\emph{space}, \emph{all} linear combinations of those vectors are also in that subset.
+
+\vspace{0.2in}
+1) a) For the CPA, you gave examples of vectors contained within the vector space $M_{33}$, that is, $3\times 3$ matrices.  You are going to examine a subset of $M_{22}$ which consists of diagonal matrices (reminder: a diagonal matrix's only non-zero entries are $m_{ii}$. ).  Give two UNIQUE examples of `vectors' in this subset.
+
+\vspace{1in}
+
+b) Does the subset statisfy the closure under vector addition property of a subspace?  Explain your reasoning (an example calculation may be helpful but is NOT sufficient by itself).
+
+\vspace{2in}
+
+c) Does the subset statisfy the closure under scalar multiplication property of a subsapce? Explain your reasoning (again, an example calculation may be helpful but is NOT sufficient by itself).
+
+\vspace{2in}
+
+d) Is this subset a subspace of $M_{22}$?
+
+\vspace{1in}
+
+2) a) Sketch the lines: $y=x$ and $ y=x+1$.  One line is a subspace of $\mathbb{R}^2$, one is not. Decide, then explain your reasoning (on paper and to your table).
+
+\vspace{2.5in}
+
+b) Discuss at your table, then write down an explanation of why the Vector Subspace Theorem includes the requirement that the zero vector is part of the subspace? \textit{Hint: If $\vec{0}$ were NOT in the subset, which property would be violated and when?}
+
+\vspace{1.5in}
+
+c) Khan academy showed that the subset: $W=\left\{ (x,y)|x\geq 0 \right\}$ was NOT a subspace of $\mathbb{R}^2$.  Is the subset $U=\left\{ (x,y)|x=0 \right\}$ a subspace? Show your reasoning.
+
+\vspace{1.5in}
+
+3) a) The differential equation: $y'+2y=0$ has the solution space $y(t)=ce^{-2t}$ (recall that this is an infinite number of functions, since $c$ can be any real number).  We want to verify the two closure properties of subspaces on the solution space.  To do this, you'll need to have two unique `vectors' (solutions) and two scalars.  Show that the linear combination is still in the solution space ({\emph i.e.} is a valid solution).
+
+\textit{(If you are taking MATH 270, you can confirm the solution to the DE for practice!)}
+
+\vspace{2in}
+
+(Challenge) b) The above was a homogenous DE.  Non-homogenous DEs are different.  If we look at: $y'+2y=3e^t$ the general solution is $y(t)=ce^{-2t}+e^t$. This general solution does NOT form a vector space.  Why not?
+
+\section*{Non-trivial Subspaces}
+
+1)a) Based on your results in the previous section, give the two trivial subspaces of $M_{44}$ and examples of two non-trivial subspaces.
+
+\vspace{2.25in}
+
+b) Based on your previous results, give an example of a non-trivial subspace of $\mathbb{R}^3$.
+
+\vspace{1in}
+
+(Challenge) c) Give an example of a non-trivial subspace of $C^2 [0,1]$.
+
+\end{flushleft}
+\end{document}

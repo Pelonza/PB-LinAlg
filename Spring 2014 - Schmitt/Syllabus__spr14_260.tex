@@ -1,0 +1,346 @@
+\documentclass{article}
+
+%\input md_macros
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+% Set up page size
+% All margin dimensions measured from a point one inch from top and side
+% of page.  Dimensions shrink by about 2 percent
+
+% SIDE MARGINS:
+\hoffset=-1truein
+
+% VERTICAL SPACING:
+\topmargin 0pt \voffset=-1truein
+
+% DIMENSION OF TEXT:
+% Note 72pt~=1in
+\textheight=687pt% Height of text (including footnotes and figures,
+                         % excluding running head and foot).
+\textwidth=468pt          % Width of text line.
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{note}{Note}
+\newtheorem*{aside}{Aside}
+
+\theoremstyle{remark}
+\newtheorem*{notation}{Notation}
+
+\newenvironment{packed_enum}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}	
+	}{\end{enumerate}}
+
+\begin{document}
+\pagestyle{empty}
+
+%Course Title and basic information
+
+\begin{center}
+\textbf{MATH 260: Linear Systems and Matrices \\(Spring 2014)}
+\end{center}
+\vspace{.5cm}
+\vskip0.1in\noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Description: }
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	\emph{Study of linear differential equations of a single variable, and their solutions (graphical, exact, and numerical), applications of ordinary differential equations, Laplace transforms, introduction to systems of linear differential equations, use of eigenvalues and eigenvectors in solving such systems. }
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Credit Hours:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	1
+\end{minipage}
+
+\vskip0.1in\noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Time \& Place:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+ T 8:00-8:50am in GEM 160
+\end{minipage}
+
+
+%Instructor ----------------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Instructor:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	Karl Schmitt
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Contact Info:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	Office: Gellersen 219, Office Phone: 464-6368
+	\newline Email: karl.schmitt@valpo.edu
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Office Hours:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	1:30-3:00pm M/T/W and by appointment, generally any afternoon is fine.
+\end{minipage}
+
+%-----------------------------
+%Prereqs
+%-------------
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Prerequisites:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+	Math 114
+\end{minipage}
+
+%----------------
+%Textbook
+%----------------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Textbook:}
+\end{minipage}
+\begin{minipage}[t]{5.3in} 
+	\emph{Differential Equations and Linear Algebra}, 2nd Ed, by Farlow.   (Required)\\
+ISBN: 9780131860612
+\end{minipage}
+
+%----------
+%Software Comments
+%----------
+%\vskip0.1in \noindent
+%\begin{minipage}[t]{1.2in}
+	%\textbf{Software:}
+%\end{minipage}
+%\begin{minipage}[t]{5.3in}
+	%We will use Maple and MATLab. Maple is available on campus computers, MATLab is available in several labs in GEM. Both have more affordable student versions available. You will probably want one of them for home use. 
+%\end{minipage}
+
+%----------------------------------
+%Graduate Stuff
+%----------------------------------
+%\vskip0.1in \noindent
+%\begin{minipage}[t]{1.3in}
+%\textbf{Graduate\\Enrollment:} 
+%\end{minipage}
+%\begin{minipage}[t]{5.2in}
+%There will be a higher expectation of completed assignments (points) for any student enrolled at the graduate level. Refer to the grade section for details. Otherwise, assignments will be similar.
+%\end{minipage}
+%----------------------------------
+
+
+%------------------
+%Generic Syllabus Stuff
+%------------------
+
+\vskip0.1in\noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Statement of \\Welcome \& \\ Inclusion:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Valparaiso University aspires to be a welcoming community, one built on participation, mutual respect, freedom, faith, competency, positive regard, and inclusion. We see difference as a strength and reason for celebration. As such, we do not tolerate language or behavior that demeans members of our classrooms based on age, ethnicity, race, color, religion, sexual orientation, gender identity, biological sex, disabilities (visible and invisible), socio-economic status, and national origin. Instead we commit ourselves to the values of diversity and nondiscrimination, conducting our classroom as ``a learning community where students are encouraged to question, to engage, to challenge, to explore, and ultimately, to embark on a rewarding personal and professional journey. This can be done only in an environment where diversity is honored and respected. Diversity of thought. Diversity of background. Diversity of faith'' (President Mark Heckler).
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Disability \\Support:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Please contact Dr. Sherry DeMik, Director of Disability Support Services, at 6956, if you believe you have a disability that might require a reasonable accommodation in order for you to perform as expected in this class. Dr. DeMik will work with you and me directly to make sure you receive any reasonable accommodation needed as the result of a disability.
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\textbf{Notice of \\Cancellation:}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Notifications of class cancellations will be made through Blackboard with as much advance notice as possible. It will be both posted on Blackboard and sent to your Valpo e-mail address. If you don’t check your Valpo e-mail account regularly or have it set-up to be forwarded to your preferred e-mail account, you may not get the message. Please check Blackboard and your Valpo e-mail (or the e-mail address it forwards to) before coming to class.
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Blackboard:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	In addition to cancellations, I will be using
+Blackboard (blackboard.valpo.edu) as an on-line student resource.
+Course documents, class announcements, and grades will be posted 
+ during the semester.
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Honor Code} \\ \textbf{Policy:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Authorized aid on homework is: (1) your brain; (2) any help I might give; (3) informal collaborative discussions on assigned problems; (4) Textbook.  If you give or receive any help from another person on the assignment, you must recognize them by name with a note at the top of your assignment.  Failure to do so is in violation of the honor code.\\		
+\vskip0.025in	
+Authorized aid on tests and exams is:  your brain.  Any changes or additions will be mentioned in class and in writing on the exam paper.
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Professionalism:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+Valparaiso University is a professional setting and all students, faculty and staff are expected to treat it as such.  This implies, amongst many other things, that students should approach communication with their instructors in a professional manner and not as if they are texting or instant messaging their friends.  An example of a professionally formatted email is as follows:\\
+
+\vspace{.01in}
+
+Prof. Schmitt,\\
+
+\vspace{.01in}
+
+I need some extra help with utility functions.  Do you have any free time to meet on Tuesday morning?\\
+
+\vspace{.005in}
+
+Thank you,\\
+Student Name
+\end{minipage}
+
+%------------------------------
+
+
+%---------------
+%Course Goals
+%---------------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\underline{\textbf{Course Goals:}}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+\begin{enumerate}[(A)]
+\item Students can \underline{perform} both exact and numerical procedures for finding solutions to problems of linear algebra.
+\item Students \underline{understand} the fundamental concepts of linear algebra.
+\item Students \underline{prepare for success} in disciplines which rely on linear algebra, and in more advanced mathematics which incorporate these topics, such as differential equations.
+
+\end{enumerate}
+\end{minipage}
+
+
+%----------
+%Topical Objectives
+%----------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\underline{\textbf{Topical}} \\ \underline{\textbf{Objectives:}}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Preface:  \emph{Students will be able to} ...
+\begin{enumerate}
+\item	define and identify systems of  linear equations (A, B)
+\item	understand fundamental concepts of matrix algebra and perform calculations using matrices (A, B). 
+\item	understanding concepts related to vector spaces, including subspaces, spanning, linear independence, basis, and dimension (B)
+\item	find an interpret eigenvalues and eigenvectors of a system of linear equations (A, B, C).  
+\item	find and interpret solutions to systems of linear equations, (A, B)
+\item	solve systems of linear equations using matrix techniques (A)
+\item	determine and analyze the behavior of autonomous first-order differential equations using phase lines (A, B)
+
+\end{enumerate}
+\end{minipage}
+
+%-------------
+%General Objectives
+%-------------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.2in}
+	\underline{\textbf{General}} \\ \underline{\textbf{Objectives:}}
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Preface:  \emph{Students will be able to} ... (with goals addressing them)
+\begin{enumerate}
+\item	identify when certain theorems apply, and if not, identify what hypothesis is violated (C)
+\item	carry over and apply knowledge from Calculus and Statistics such as differentiation, graphical interpretation of derivatives, integration, the Fundamental Theorem of  Calculus, use and properties of transcendental functions (A,C)
+\item	use computer software packages to solve multiple types of linear algebra problems (A,C)
+\item use proper mathematical notation and vocabulary (C)
+\item	write clear and detailed solutions to assigned problems in mathematical jargon (C)
+\end{enumerate}
+\end{minipage}
+
+
+%-----
+%Missing Class/Tests & Late Assignment Policy
+%---------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Missing Class or} \\ \textbf{Assessments:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Written homework is due at the \emph{beginning} of class and will not be accepted late for full credit.  Written homework submitted late but within one week of the due date will receive half credit (see below for details).
+%	 or for not submitting a homework assignment on time, a certain number of quiz and homework scores will be 
+	%discarded from consideration when determining the course grade.  If there is not a legitimate reason, the score will be 0.
+	\vskip0.1in \noindent In the event that a serious problem arises concerning you taking  an Exam, you may be excused only if you contact me \underline{\emph{before}} the time of the Exam \underline{\emph{and}} have a legitimate excuse, or afterwards with University sanctioned excuses and documentation. You will then take a Make-Up 
+	Exam which may or may not resemble the Exam you miss.  The score for an unexcused absence is 0.
+\end{minipage}
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Late} \\ \textbf{Policy:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Any assignment may be turned in late with a corresponding deduction in value. Assignments are due at the \textbf{beginning} of class. Once class has begun a 10\% penalty will be applied to your final score. For every 24hrs after the due date, there will be a cumulative 10\% penalty applied. As an example, if an assignment is due for Wednesday, if it is turned in Thursday by the time class would have started, it will be a 10\% penalty. If it is turned in at the beginning of Friday's class it will be a 20\% penalty. If you turn it in later in the day, it would be 30\%. If it was turned in Monday it would be worth 50\%. No assignment will be accepted more than two (2) class periods late. Emailed versions of late assignments will be accepted. 
+\end{minipage}
+
+%-----------------------
+%Learning Activities and Assessments
+%------------------------------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Learning \\Activities \\and \\Assessments:}
+\end{minipage}	
+\begin{minipage}[t]{5.2in}
+\vskip0.05in \indent \textbf{Class Preparation Assignments:} (CPAs) These are assignments on out-of class expected learning and are vital for ensuring effective, productive classroom time. There will be at least one a week, possibly as many as one a day. These will be graded on a P/F. You receive a `P' for a good-faith effort with answers to all questions and turned in at the beginning of class. These will be worth 10\% of your grade.
+
+\vskip0.05in \indent \textbf{Homework:} There will be a `homework' assignment each week. These assignments will also be posted on Blackboard. You must turn in an individual set of solutions unless otherwise specified. Homework will be 30\% of your grade.
+%They will be partially completed in class, and partially on your own.
+
+\vskip0.05in \indent \textbf{In-Class:} A significant portion of learning will occur through in-class worksheets and activities. These will occasionally be collected and graded. They will be worth 20\% of your grade.
+
+\vskip0.05in \indent \textbf{Tests:} There will one midterm and one final. The midterm is 15\% of your grade and the final is 25\%. The final will be given during the last day of class (NOT during finals week).
+\end{minipage}
+
+
+%----------
+%Grade Breakdown
+%----------
+
+\vskip0.1in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Grading:} 
+\end{minipage}
+\begin{minipage}[t]{5.3in}
+Overall your grade will consist of: 10\% CPA, 20\% In-class, 30\% Homework, 15\% Midterm, 25\% Final Exam. 
+\end{minipage}
+
+\end{document}

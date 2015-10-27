@@ -1,0 +1,200 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 12:  Null \& Column Spaces}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+If you need more explanations after class, you can read Section 5.4 of your textbook.\\
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to find the null space/kernel of any matrix
+\item Be able to give the column space for any matrix
+\item Be able to give a basis for the column space of a matrix
+\item Be able to describe how the null space and column space relate to each other
+%\item Be able to determine if a set of vectors is a basis for a vector space
+%\item (stretch) Be able to find the dimension of a set or space (by the end of homework for sure!)
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\section*{Warm-up:  In the null space?}
+%This is the matrix from Sect. 5.4, pg 339, #43
+Recall that the null space is all vectors $\vec{x}$ such that $\textbf{A}\vec{x}=\vec{0}$. Given the matrix:\\
+\begin{center}
+$\textbf{G}=
+\begin{bmatrix}
+2 & 3 & -1\\
+-1 & 4 & 6 \\
+1 &  7 & 5
+\end{bmatrix}
+$\\
+\end{center}
+1a) Determine which of the following vectors are in the null space of \textbf{G}.\\
+\begin{center}
+$ \vec{w}_1=\begin{bmatrix} 3 \\ 2 \\ 1 \end{bmatrix} $
+\hspace{0.3in}
+$ \vec{w}_2=\begin{bmatrix} 8 \\ -4 \\ 4 \end{bmatrix} $
+\hspace{0.3in}
+$ \vec{w}_3=\begin{bmatrix} -2 \\ 1 \\ -1 \end{bmatrix} $
+\end{center}
+
+\vspace{2in}
+
+1b) Find the actual null space of \textbf{G}. Do your answers above make agree?
+
+\newpage
+
+\section*{A useful Null Space}
+Given the matrix $\textbf{F} = \begin{bmatrix} 1 & 2 \\ 3 & 0 \end{bmatrix}$ with eigenvalues of -2 and 3.
+
+\vspace{0.1in}
+
+2) Find the null space of the matrix $(\textbf{F} + 2 \textbf{I} )$. 
+
+\vspace{1.25in}
+
+3) Find the null space of the matrix $(\textbf{F} - 3 \textbf{I} )$. 
+
+\vspace{1.25in}
+
+4) Have you seen these null spaces (or their calculations) before? What do the null spaces you found in (2) and (3) have to do with the matrix \textbf{F}?
+
+\vspace{1in}
+
+\section*{Basis for Column Space}
+We know that the column space ( $span( \{ \vec{v}_1 , \vec{v}_2, \ldots \vec{v}_n \} )$ ) is a subspace. However, generally in mathematics we want to describe things in as simple terms as possible. For spaces, this means giving a \textit{basis} only for a space. \\
+Recall that a set is a \textbf{basis} of a vector space if it has the properties:\\
+(i) The set is linearly independent \hspace{.25in} (ii) The span of the set covers the entire vector space.\\
+
+\vspace{0.1in}
+
+5) The column space of \textbf{G} could be given as \textit{span}$ \left( \left\{ \begin{bmatrix} 2 \\ -1 \\ 1\end{bmatrix}, \begin{bmatrix} 3 \\ 4 \\ 7 \end{bmatrix}, \begin{bmatrix} -1 \\ 6 \\ 5 \end{bmatrix} \right\} \right)$. Does the set $S=\left\{ \begin{bmatrix} 2 \\ -1 \\ 1 \end{bmatrix}, \begin{bmatrix} 3 \\ 4 \\ 7 \end{bmatrix}, \begin{bmatrix} -1 \\ 6 \\ 5 \end{bmatrix} \right\}$ form a basis for the column space? (Show why or why not)
+
+\vspace{1.5in}
+
+We already have all the tools and information to define a valid basis. Let's do so...
+
+\vspace{0.1in}
+
+6) Which columns in the RREF of \textbf{G} are pivot columns?
+
+\vspace{0.75in}
+
+7) Take the columns from the original \textbf{G} that you identified as the pivot columns. Form a new set $S_{B}$ from these columns. These should be $3 \times 1$ vectors with non-zero values in each row.  \textit{Be sure to show work or explain your reasoning below, a yes/no answer for any of the below will NOT receive credit.}
+
+\vspace{0.1in}
+
+7a) Is this new set $S_{B}$ linearly independent?
+
+\vspace{1.5in}
+
+7b) Does it span the entire column space? ( \textit{Hint: Does $span( S ) = span ( S_{B} ) $ } )
+
+\vspace{1.5in}
+
+7c) Is the set $S_{B}$ a basis for the column space? Explain.
+
+\vspace{0.75in}
+
+8) We defined the \textbf{rank} of a matrix as the number of pivot columns in RREF. How does the rank of \textbf{G} relate to the column space of \textbf{G}? (\textit{Hint: What property of a space gives a single value out?} )
+
+\vspace{1.6in}
+
+\Large Note this relationship between rank and column spaces is actually true for any matrix. \normalsize
+
+\newpage 
+
+\section*{Rank-Nullity Theorem}
+9) For the CPA you found the null space and column-space of $\textbf{A}=\begin{bmatrix} 1 & -2 \\ 1 & -2 \end{bmatrix}$.\\
+A basis for the column space is $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$. A basis for the null space is $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$.
+
+\vspace{0.15in}
+
+9a) What is the dimension of the null space and column space for \textbf{A}?
+
+\vspace{0.75in}
+
+9b) How do the dimensions of \textbf{F} relate to the sum: dim( column space of \textbf{A}) + dim( null space of \textbf{A} ) ?
+
+\vspace{1in}
+
+10a) State the dimension of the null space (the \textit{nullity} of \textbf{G} ) and the dimension of the column space for matrix \textbf{G}.
+
+\vspace{0.75in}
+
+10b) How do the dimensions of \textbf{G} relate to the sum: dim( column space of \textbf{G} ) + dim( null space of \textbf{G}) ?
+
+\vspace{1in}
+
+11) The \textbf{Rank-Nullity Theorem} generalizes the above results for the $m\times n$ matrix \textbf{A}. Based on your results, what do you think the \textbf{Rank-Nullity Theorem} is? (Take a guess BEFORE looking this up! You should check with your professor or check your text once you make a guess.)
+
+\vspace{0.75in}
+
+%\section*{Row-Spaces and Left-Nullspace}
+%Just as each matrix has a column-space, it also has a row-space. These row spaces are defined analogously. While we could define a whole new set of column operations there's an easier way...
+%
+%\vspace{0.1in}
+%
+%7a) Find the transpose of matrix \textbf{G} $\rightarrow \textbf{G}^{T}$.
+%
+%\vspace{1in}
+%
+%7b) How are the rows of \textbf{G} related to the columns of $\textbf{G}^T$?
+%
+%\vspace{1in}
+%
+%7c) Find a basis for the column-space of $\textbf{G}^T$.
+%
+%\vspace{1.5in}
+%
+%8) Explain why the row-space of \textbf{G} and the column-space of $\textbf{G}^T$ are equivalent.
+%
+%\vspace{1in}
+%
+%9) Find the null-space of $\textbf{G}^{T}$. 
+%
+%\vspace{1.5in}
+%
+%This is called the \textit{left nullspace} because it is equivalent to finding the set of vectors $\vec{x}$ which satisfy $\vec{x}^{T} \textbf{A} = \vec{0}$. Notice we have moved $\vec{x}$ to the left-side of \textbf{A}. 
+%
+%\vspace{0.2in}
+%
+%10a) What is the dimension of the row-space and left-nullspace of matrix \textbf{G}?
+%
+%\vspace{0.75in}
+%
+%10b) How do the dimensions of \textbf{G} relate to the sum: dim( Row-Spc ) + dim( Left-Nullspc) ? 
+%
+%\vspace{1in}
+%
+%\section*{Fundamental Spaces}
+%11) Detail the four spaces you found above for \textbf{G}. Give their name, dimension and basis. (A 4 x 3 table with column labels would be perfect).
+%
+%\vspace{3in}
+%
+%You have now found the four fundamental spaces of the matrix \textbf{G}! These four spaces can be found for any matrix and are used in a variety of operations. We'll look into this a little next week. 
+\end{flushleft}
+\end{document}

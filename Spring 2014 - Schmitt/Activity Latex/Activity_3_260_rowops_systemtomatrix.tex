@@ -1,0 +1,229 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 3:  Matrices, Systems and Row Operations}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  Homework problems are at the end.  The assignment will not be collected today, but may be collected in the future.
+
+\vspace{0.2in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to convert from a system of equations to a (augmented) matrix, and back.
+\item Be able to perform basic row operations on a matrix.
+\item Be able to identify row echelon form (REF), and be able to manipulate a matrix to be in REF.
+\item (Stretch Goal) Be able to identify reduced row echelon form (RREF) and manipulate a matrix to be in RREF.
+\end{enumerate}
+\vspace{0.1in}
+\section*{Algebra Warmup}
+Solve the following system of equations by elimination. Everytime you add two equations, or multiply by numbers, right out explicitly what you are adding together or multiplying by on the left.\\
+\vspace{0.25in}
+\begin{center}
+$\begin{array}{rrrcr}
+x+&y+&z&=&3\\
+2x-&2y-&z&=&-9\\
+-x+&y-&z&=&3
+\end{array}
+$
+\end{center}
+
+\vspace{2in}
+Be sure and check your answers around your table.\\
+\newpage
+\section{Turning Systems into Matrices}
+Linear Algebra is a mathematical field designed to allow fast and easy solving of systems of equations, by denoting operations on the entire system succinctly. Notice it was rather messy to work with all those equations in the warmup excercise, imagine doing that for 5 variables or 15 variables and equations. There are two notations we use in Lin. Alg. to condense systems, \textit{Matrix-Vector Form} and \textit{Augmented Matrices}. Let's turn the system from the warmup into Matrix-Vector Form:
+a) First, re-write the system and replace the variables with: $x = x_1$, $y=x_2$, $z=x_3$. Notice they are all still different, but now we can just refer to them as variable 1, 2, or 3. \\
+We write all three together as a vector of size 3x1: $\vec{\textbf{x}}=\begin{bmatrix} x_1\\x_2\\x_3\end{bmatrix}$\\
+\vspace{0.75in}
+b) Now write the coefficients (numbers by variables) from the 2nd equation as a \textit{vector} of size 1x3. \\
+Call it $\vec{\textbf{a}}$\\
+\vspace{0.5in}
+c) Multiply $\vec{\textbf{a}}\cdot\vec{\textbf{x}}$. Does it look familiar? Discuss at your table some. \\
+\vspace{1in}
+d) Now make a matrix of the variable's coefficients, we'll call it \textbf{A} (write it out). What would $\textbf{A}\cdot\vec{\textbf{x}}$ be? (You don't need to do the multiplication, but discuss at your table)\\
+\vspace{1in}
+e) We're almost there...\\
+Finally, write the values on the right-hand side of the ='s as a 3x1 vector. Call it $\vec{\textbf{b}}$. (You can write it above)\\
+f) Using the vectors $\vec{\textbf{x}}$, $\vec{\textbf{b}}$ and matrix \textbf{A}, try writing out the system of equations from the warmup.\\ (We'll discuss the answer as a class)\\
+\vspace{0.5in}
+g) Augmented Matrix form is just a subset of these, where we keep just the coefficients (\textbf{A}) and the right-hand-side ($\vec{\textbf{b}}$). We write is as: $[\textbf{A}|\vec{\textbf{b}}]$. Generally, we actually write out the numbers, as we want to manipulate the augemented matrix. \\
+Write out the full augmented matrix for this system (it should be a 3x4 matrix). \\
+
+\newpage
+\section{Row Operations}
+The main reason we want an augemented matrix is to use it for solving systems. One way to solve the system is by doing row operations to get it into \textit{row echelon form} (REF) or \textit{reduced row echelon form} (RREF). We'll define these in a bit, once we are comfortable with operations...\\
+\vspace{0.1in}
+\hrulefill \\
+\noindent
+There are three basic row operations we can perform (see page 134 of the text):\\
+$R_i$ means row \textit{i} before an operation while $R_i^*$ denotes row \textit{i} after an operation.\\
+1) Row swap between row \textit{i} and row \textit{j}, denoted: $R_i \leftrightarrow R_j$\\
+2) Multiply a row \textit{i} by a constant \textit{c} ( with $c\neq 0$) , denoted: $R_i^*=c R_i$\\
+3) Add a (multiple) of a row to another row, denoted: $R_i^*= R_i+c R_j$\\
+\hrulefill \\
+
+\vspace{0.1in}
+\noindent
+Lets try these out with our augmented matrix version of the warmup problem:\\
+a) Perform the following row operations:\\
+\vspace{0.1in}
+$\begin{array}{c}
+\\
+\\
+R_2 \leftrightarrow R_3\\
+\\
+\\
+\\
+\end{array}
+$
+\hspace{0.55in}
+$\begin{bmatrix}[ccc|c]
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\end{bmatrix}$
+\hspace{0.2in}
+$\begin{array}{c}
+\\
+\\
+\\
+\\
+R_3^*=R_3+2 R_2\\
+\end{array}
+$
+\hspace{0.25in}
+$\begin{bmatrix}[ccc|c]
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\end{bmatrix}$\\
+\vspace{0.1in}
+$\begin{array}{c}
+\\
+\\
+R_2^* = R_1 + R_2\\
+\\
+\end{array}
+$
+\hspace{0.25in}
+$\begin{bmatrix}[ccc|c]
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\end{bmatrix}$
+\hspace{0.2in}
+$\begin{array}{c}
+\\
+\\
+R_2^*= \frac{1}{2}R_2\\
+\\
+R_3^*= \frac{-1}{3}R_3\\
+\end{array}
+$
+\hspace{0.5in}
+$\begin{bmatrix}[ccc|c]
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}& \hspace{0.2in}\\
+& & & \\
+\end{bmatrix}$\\
+\vspace{0.1in}
+You should now have a matrix with 8 non-zero entries. \\
+The first entry in each row should also be a positive 1. \\
+Now, lets convert this augmented matrix back into equations...\\
+\vspace{0.1in}
+b) Rewrite your final augmented matrix below, without the brackets or line\\
+ (but leave space between each number). Now, beside each number in column 1 put an `$x$', column 2 a `$y$' and column 3 a `$z$'. Where the vertical line was, put an `=' sign.\\
+\vspace{1.25in}
+c) Discuss the following questions at your table (and jot some notes down):\\
+How does this compare to what you got for the warmup? \\
+How do the row operations compare to what you did to solve by elimination (discuss any similarities AND differences)?
+\vspace{1.5in}
+
+\newpage
+\section{REF and RREF}
+The matrix we got at the end of 2a was in \textit{row echelon form}. A matrix in REF has the following traits (see page 136 of the text):
+\begin{enumerate}
+\item Any zero rows are at the bottom
+\item The leftmost non-zero entry of each non-zero row equals 1.\\
+ (This entry is called its \textbf{pivot} or \textbf{leading 1}.)
+\item Each pivot is further to the right than the pivot in the row above it.
+\end{enumerate}
+a) Determine of each of the following matrices is in REF or not. If not, perform row operations to turn it into REF.\\
+\vspace{0.1in}
+\begin{center}
+$\textbf{M}=\begin{bmatrix}
+0 & 0 & 2\\
+1 & 3 & 1
+\end{bmatrix}
+$
+\hspace{0.2in}
+$\textbf{T}=\begin{bmatrix}
+1 & 3 & 0 & -1 \\
+0 & 0 & 1 & -2
+\end{bmatrix}$\\
+\end{center}
+\vspace{1.5in}
+\textit{Reduced row echelon form} (RREF) is a even more strict form for matrices to take, which adds an additional property to the three above:\\
+\vspace{0.1in}
+\hrulefill \\
+\indent 4. Each pivot is the only non-zero entry in its column.\\
+\vspace{-3pt}
+\hrulefill \\
+\vspace{0.1in}
+Matrix \textbf{T} from (a) is actually in RREF.\\
+
+
+b) What additional row operations are required to turn matrix \textbf{M} into RREF?
+\vspace{0.5in}
+\newpage
+\section{Bringing it together}
+Take the following system of equations, write it first in matrix-vector from, then as an augmented matrix. Finally, use row operations to turn it into RREF:\\
+\begin{center}
+$\begin{array}{rrrrrrr}
+x_1 & + & x_2 & + & 2 x_3 & = & 1\\
+2 x_1 & - & x_2 & + & x_3 & = & 2\\
+4 x_1 & + & x_2 & + & 5 x_3 & = & 4
+\end{array}
+$
+\end{center}
+\vspace{5in}
+\section{Homework}
+\LARGE Due Feb. 11th (two weeks)
+\normalsize
+On page 143: 14, 16, 18, 20, 22\\
+AND: Write \# 28 and \# 32 in matrix-vector form and as an augmented matrix.
+
+\end{flushleft}
+\end{document}

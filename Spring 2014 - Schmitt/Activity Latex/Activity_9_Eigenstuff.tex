@@ -1,0 +1,205 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 9:  Eigenvalues and Eigenvectors}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+\large The worksheet is due by the end of the day (5pm). \normalsize \\ 
+If you need more explanations after class, you can read Section 5.3 of your textbook.\\
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to calculate the eigenvalues and eigenvectors of a 2x2 matrix.
+\item Understand how to calculate the eigenvalues and eigenvectors for ANY matrix.
+\item (Stretch) Be able to identify several properites of eigenvalues/vectors.
+%\item Be able to determine if a set of vectors is a basis for a vector space
+%\item (stretch) Be able to find the dimension of a set or space (by the end of homework for sure!)
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\section*{Warm-up:  Matrix Multiplication}
+
+Given the matrix 
+$\textbf{A}=
+\begin{bmatrix} 
+1 & 1 \\ 4&1 
+\end{bmatrix}$
+ and the vectors: 
+$\vec{v}_1=\begin{bmatrix} 2 \\ 2 \end{bmatrix}$, 
+$\vec{v}_2=\begin{bmatrix} 1 \\ 2 \end{bmatrix}$,
+$\vec{v}_3=\begin{bmatrix} -2 \\ 0 \end{bmatrix}$, 
+$\vec{v}_4=\begin{bmatrix} -1 \\ -4 \end{bmatrix}$, 
+$\vec{v}_5=\begin{bmatrix} 1 \\ -2 \end{bmatrix}$.
+
+\vspace{0.1in}
+
+Find $\textbf{A}\vec{v}_i$ for $i=1\rightarrow 5$. 
+
+\vspace{2in}
+
+\newpage
+
+\section*{Visualizing Eigenvectors}
+
+1. Sketch each $\vec{v}_i$ and the result of $\textbf{A}\vec{v}_i$ from the warm-up on the x-y plane. You should have 5 pictures when you are done. Be sure to clearly label which was your initial, and which your resultant vector. 
+
+\vspace{4in}
+
+2. Two vectors behaved differently, which ones? Describe \& discuss at your table how they behaved differently.
+
+\vspace{1in}
+
+3. For the two vectors that behaved differently, you should be able to write the eigenvector equation: $\textbf{A}\vec{v}=\lambda \vec{v}$. Find $\lambda_i$ for each pair of vectors.
+
+\vspace{.75in}
+
+\newpage
+
+\section*{Practice}
+
+Let's practice.
+
+\vspace{0.1in}
+
+4. For each matrix, take the determinant $|\textbf{A}- \lambda \textbf{I}  | $ then set the resulting polynomial equal to 0 and solve for $\lambda$. (they should all be factorable). Once you have found ALL the eigenvalues ($\lambda$) find at least one eigenvector for each matrix.\\
+
+\begin{center}
+
+$\textbf{W}=\begin{bmatrix}[rr] 1 & 4\\-4&11 \end{bmatrix}$
+\hspace{0.3in}
+$\textbf{G}=\begin{bmatrix}[rrr] 1 & 1 & -2\\ -1 & 2 & 1\\ 0 & 1 & -1 \end{bmatrix}$
+\hspace{0.3in}
+$\textbf{R}=\begin{bmatrix}[rrr] 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \end{bmatrix}$
+
+\end{center}
+
+\vspace{6in}
+
+5. Go back and look at $\textbf{R}$ what do you notice about the eigenvalues you found for \textbf{R}?
+
+\newpage
+
+\section*{Some Properties of Eigenvalues}
+
+\textit{ Note: We will find these for $2 \times 2$ matrices, but these properties generalize to any $n \times n$ matrix. }
+
+\vspace{0.3in}
+
+6. We find eigenvalues by solving: $|\textbf{A}- \lambda \textbf{I}  | =0 $. What happens if $\lambda = 0 $? What must be true about the matrix \textbf{A} for \textbf{A} to have eigenvalues of 0?
+
+\vspace{1in}
+
+7. (a) Find $\textbf{W}^{T}$.
+
+\vspace{1in}
+
+\hspace{0.12in} (b) What is the polynomial from $|\textbf{W}^{T}- \lambda \textbf{I}  | $ and how does it compare to the polynomial for $|\textbf{W}- \lambda \textbf{I}  | $?
+
+\vspace{1in}
+
+\hspace{0.12in} (c) What can you say about the eigenvalues (and vectors) of $\textbf{A}$ and $\textbf{A}^{T}$?
+
+\vspace{0.75in}
+
+8. (a) Find $\textbf{W}^{-1}$. (the inverse)
+
+\vspace{1in}
+
+\hspace{0.12in} (b) What is the polynomial from $|\textbf{W}^{-1}- \lambda \textbf{I}  | $? Set the polynomial equal to 0, and solve for $\lambda$
+
+\vspace{1in}
+
+\hspace{0.12in} (c) Look carefully, how do the eigenvalues of $\textbf{W}^{-1}$ relate to the eigenvalues of \textbf{W}?
+
+
+%
+%As you might have guessed from the notation above (or remembered from your textbook) you have identified the eigenvectors and eigenvalues for the matrix \textbf{A}. Multiplication by a matrix is called a \textit{linear transformation}. We can more generally write the results from above using the equation:\\
+%\begin{equation*} \textbf{A}\vec{v}=\lambda \vec{v} \end{equation*}
+%
+%\vspace{0.1in}
+%
+%\section*{Computing Eigenvectors}
+%
+%Let's take a closer look at the equation: $\textbf{A}\vec{v}=\lambda \vec{v}$ We've learned before we can do algebric manipulation on matrices (this is linear algebra after all), so here's a series of manipluations:
+%\begin{center}
+%$\textbf{A}\vec{v}=\lambda \vec{v} \rightarrow \textbf{A}\vec{v} - \lambda \vec{v} = 0 \rightarrow (\textbf{A} -\lambda ) \vec{v} = 0$
+%\end{center}
+%Remember, above we found that $\lambda$ was just a scalar value...
+%
+%\vspace{0.1in}
+%
+%4. If \textbf{A} was a $2 \times 2$ matric, can you find $\textbf{A}-\lambda$? What about if it was a $3 \times 3$ matrix or an $n \times n$ matrix. If so, what is it, if not, why not? \\
+%\textit{If it helps to have a number for thinking, you can pick either $\lambda$ you found above}
+%
+%\vspace{1in}
+%
+%5. Can you find $\textbf{A}- \lambda \textbf{I}$ (for \textbf{A} as a $2 \times 2$, $3 \times 3$, or $n \times n$ matrix)? If so, what is it, if not, why not? \\
+%\textit{If it helps to have a number for thinking, you can pick either $\lambda$ you found above}
+%
+%\vspace{1in}
+%
+%6. If you haven't talked about your answers to 4. and 5. at your table, or with the professor, do so now.
+%
+%\vspace{0.2in}
+%
+%7. Now, it is time to use your system solving skills (finding RREF) to find eigenvectors. \\
+%Create an augmented matrix (for each $\lambda$) then solve the system: $(\textbf{A}- \lambda \textbf{I}) \begin{bmatrix} v_1\\v_2\end{bmatrix}=\vec{0}$
+%
+%\vspace{2.5in}
+%
+%8. How many solutions did each system have? How does that correspond to the special trait you observed in 2?
+%
+%\vspace{1in}
+%
+%9. You already knew the eigenvectors for \textbf{A} (they are the two special vectors from before), how do these relate to the RREF form of the augmented matrices?
+%
+%\vspace{1in}
+%
+%\section*{Computing Eigenvalues}
+%
+%Using $(\textbf{A}- \lambda \textbf{I}) \vec{v}=\vec{0}$ to find the eigenvectors is great, but it only works if we already know the eigenvalues. We need to use the same equation (in a different way) to find the eigenvalues. Let's examine the equation a little closer...
+%
+%\vspace{0.2in}
+%
+%10. Let $x= (\textbf{A}- \lambda \textbf{I})$ and $ y = \vec{v}$. Then we have the equation: $x y = 0$. If we let $x$ take any value, what must $y$ equal for the equation to be true? What about $x$ if we let $y$ take any value?\\(Show why or write a sentence, don't just write the value.)
+%
+%\vspace{1in}
+%
+%11. Would it be useful to have $y=\vec{v}=0$ (that is, eigenvectors equal to 0)? Why or why not?\\
+%It might help to think about how the $\vec{\textbf{0}}$ relates to a vector space and basis. \\
+%(You don't need an essay, but discuss at your table and write down at least a sentence or two)
+%
+%\vspace{1in}
+%
+%If we want  $x= (\textbf{A}- \lambda \textbf{I})=0$ this is only true if $|\textbf{A}- \lambda \textbf{I}  | = 0$. Solving the polynomial equations generated from this determinant is our general method for finding eigenvalues. 
+%
+%\vspace{0.2in}
+%
+%\newpage
+
+
+\end{flushleft}
+\end{document}

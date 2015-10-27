@@ -1,0 +1,265 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Systems and Matrices, Fall `14}\\
+	\bfseries{Activity 6:  Determinants}\\
+%	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+
+\section*{Warmup: Specific Determinant Formulas}
+
+$|\textbf{A}| = \begin{vmatrix}[rr] a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} = a_{11} a_{22} - a_{12} a_{21}$ 
+
+\vspace{0.2in}
+
+$|\textbf{A}| = \begin{vmatrix}[rrr] a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix} = a_{11} a_{22} a_{33} +  a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{13} a_{22} a_{31} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33} $
+
+\vspace{0.2in}
+
+\textit{Note:} You will need to have at least the first formula memorized!  The second formula is called the ``basketweaving" technique for solving $3 \times 3$ determinants.  Note that basketweaving ONLY works for $3 \times 3$s, it doesn't generalize to larger matrices.  We'll learn another technique, too, one that works on any size square matrix.
+
+\vspace{0.2in}
+
+
+Find the determinant of the following matrices:
+
+\begin{center}
+$\begin{bmatrix}[rr]
+-3 & 1   \\
+4 & 2   
+\end{bmatrix}
+$
+\hspace{1in}
+$\begin{bmatrix}[rrr]
+3 & 0 & -1\\
+0 & 0 &  3 \\
+0 & 1 & 0
+\end{bmatrix}
+$
+\end{center}
+
+\newpage
+
+
+\section{Some Properties and Practice}
+
+For \textbf{Activity 5} you found several inverses and transposes of matrices. Let's use them...
+
+\begin{center}
+$\textbf{H}=\begin{bmatrix}[rr]
+1 & 1\\
+4  & 1
+\end{bmatrix}$
+\hspace{0.5in}
+$\textbf{H}^{-1}=\left[
+\begin{array}{cc}
+- \frac{1}{3} & \frac{1}{3} \vspace{0.1in}\\
+
+\frac{4}{3} & - \frac{1}{3}
+\end{array} \right]$
+\hspace{0.5in}
+$
+\textbf{H}^{T}=\begin{bmatrix}[rr]
+1 & 4\\
+1  & 1
+\end{bmatrix}$
+\hspace{0.5in}
+$\textbf{G}=
+\begin{bmatrix}[rrr]
+3 & 0 & 3\\
+-1 & 2 & 1\\
+1 & 1 & 2
+\end{bmatrix}$\\
+\end{center}
+
+\vspace{0.1in}
+
+a) Find $|\textbf{H}|$.
+
+\vspace{1in}
+
+b) Find $|\textbf{H}^{-1}|$.
+
+\vspace{1in}
+
+c) Find $|\textbf{H}^{T}|$.
+
+\vspace{1in}
+
+d) Find $|\textbf{G}|$.
+
+\vspace{1in}
+
+e) Are any of the numbers above the same? Closely related? Try to write each as a generalized property.
+
+\newpage
+
+
+\section{Finding Minors}
+
+
+\textbf{Definition:} For the $n \times n$ matrix \textbf{A}, the \textit{minor $M_{ij}$} of $a_{ij}$ is an $(n-1) \times (n-1)$ matrix obtained by deleting the $i$th row and the $j$th column of \textbf{A}.
+
+\begin{center}
+$\textbf{A}=
+\begin{bmatrix}
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\end{bmatrix}
+=
+\begin{bmatrix}[rrrr]
+1&2&3&1\\
+5&0&1&-2\\
+4&0&1&0\\
+2&0&3&1
+\end{bmatrix}
+$
+\hspace{0.4in}
+$\textbf{M}_{12}=
+\begin{bmatrix}
+\circ & \circ & \circ & \circ \\
+\bullet & \circ & \bullet & \bullet \\
+\bullet & \circ & \bullet & \bullet \\
+\bullet & \circ & \bullet & \bullet \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\bullet & \bullet & \bullet \\
+\bullet & \bullet & \bullet \\
+\bullet & \bullet & \bullet \\
+\end{bmatrix}
+=
+\begin{bmatrix}[rrr]
+5 & 1&-2\\
+4 & 1& 0\\
+2&3&1
+\end{bmatrix}$
+\end{center}
+
+a) Find the minor $\textbf{M}_{43}$ of $\textbf{A}$.
+
+\vspace{1.25in}
+
+b) Let's find some minors of $\textbf{B} =
+\begin{bmatrix}[rrr]
+5 & 1&-2\\
+4 & 1& 0\\
+2&3&1
+\end{bmatrix}$.  Notice that $\textbf{B}$ is just $\textbf{M}_{12}$ from above, so you'll be finding the minor of a minor.
+
+\vspace{0.2in}
+
+(i) Find $\textbf{M}_{21}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+(ii) Find $\textbf{M}_{22}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+(iii) Find $\textbf{M}_{23}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+c) Find the determinant of the minors you found in part (b).
+
+\vspace{0.2in}
+
+(i)
+
+\vspace{0.5in}
+
+(ii)
+
+\vspace{0.5in}
+
+(iii)
+
+\newpage
+
+\section{Co-Factors}
+
+\textbf{Definition:} The \textit{co-factor} of an element $a_{ij}$ is the scalar: $C_{ij}=(-1)^{i+j}|\textbf{M}_{ij}|$
+
+\vspace{0.2in}
+
+Notice that the co-factor is just the determinant of a minor, times $\pm 1$. We'll use this in the next part of the activity.
+
+\vspace{0.2in}
+
+a) Find $C_{21}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+b) Find $C_{22}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+c) Find $C_{23}$ of $\textbf{B}$
+
+\vspace{0.75in}
+
+d) Can you find $C_{12}$ of \textbf{A} (based on what you've already computed)? Why or why not?\\
+
+\vspace{1in}
+
+\section{Determinants of $n \times n$ matrices}
+
+Let's start by finding the determinant of the $3 \times 3$ matrix $\textbf{B}$.
+
+\vspace{0.2in}
+
+a) First find the determinant of $\textbf{B}$ using the basketweaving technique from the warm-up.
+
+\pagebreak
+
+b) Find the following sum: \hspace{0.2in} $b_{21}*C_{21} + b_{22}*C_{22} + b_{23}*C_{23}$ \\
+
+\vspace{0.2in}
+
+\textit{Hint: You should get a single, scalar number, which should look familiar.}\\
+
+\vspace{1in}
+
+c) Try writing the sum for (b) in summation notation (i.e. using: $\Sigma$).\\
+
+\vspace{2in}
+
+This method of finding the determinant is called ``cofactor expansion by a row or column."  Here, we found the determinant of $\textbf{B}$ by expanding by row 2.  You can obtain the determinant by using the formula you found in part (c) but you can pick any row or column the general formula is given on page 157 of your textbook, and below.  Since you can pick any row or column, it is often wise to pick the row or column with the most 0s, to make computation easier.
+
+\vspace{0.2in}
+
+\textbf{Definition:} Choose a row $i$ or column $j$, then $|A|=\sum\limits^{n}_{(j \text{ or } i)} a_{ij} C_{ij} = \sum\limits^{n}_{j \text{ or } i} a_{ij} (-1)^{i+j} |\textbf{M}_{ij}| $
+
+\vspace{0.2in}
+
+For matrices larger than $3 \times 3$, finding the determinant of an $n \times n$ matrix is a recursive process.  Notice that $\textbf{M}_{ij}$ may not be a $2 \times 2$!  You might have to use this process several times, reducing the size of the minors by 1 each time.
+
+\vspace{0.2in}
+
+c) Using this definition find the determinant of our original $\textbf{A}$ matrix.  (Use cofactor expansion to reduce the determinant from a $4 \times 4$ to a sum of $3 \times 3$ determinants, then either use basketweaving on those, or do a cofactor expansion on each $3 \times 3$ to make a sum of $2 \times 2$ determinants.
+
+\vspace{0.2in}
+
+\textit{Hint: You should only need to do a few new multiplications and additions, you calculated most of it already.}
+
+\end{flushleft}
+\end{document}

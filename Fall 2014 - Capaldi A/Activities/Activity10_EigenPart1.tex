@@ -1,0 +1,121 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Systems and Matrices, Fall `14}\\
+	\bfseries{Activity 10:  Introduction to Eigenvalues and Eigenvectors}\\
+	%\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+
+\begin{flushleft}
+
+\section*{Warm-up:  Matrix Multiplication}
+
+Given the matrix 
+$\textbf{A}=
+\begin{bmatrix} 
+1 & 1 \\ 4&1 
+\end{bmatrix}$
+ and the vectors: 
+$\vec{v}_1=\begin{bmatrix} 2 \\ 2 \end{bmatrix}$, 
+$\vec{v}_2=\begin{bmatrix} 1 \\ 2 \end{bmatrix}$,
+$\vec{v}_3=\begin{bmatrix} -2 \\ 0 \end{bmatrix}$, 
+$\vec{v}_4=\begin{bmatrix} -1 \\ -4 \end{bmatrix}$, 
+$\vec{v}_5=\begin{bmatrix} 1 \\ -2 \end{bmatrix}$.
+
+\vspace{0.1in}
+
+Find $\textbf{A}\vec{v}_i$ for $i=1,...,5$. 
+
+\vspace{2in}
+
+\newpage
+
+\section*{Visualizing Eigenvectors}
+
+1) Sketch each $\vec{v}_i$ and the result of $\textbf{A}\vec{v}_i$ from the warm-up in the $xy$-plane. You should have 5 pictures when you are done. Be sure to clearly label which was your initial, and which your resultant vector. 
+
+\vspace{4in}
+
+2) Two of the $v_i$ vectors behaved differently, which ones? Describe how they behaved differently.
+
+\vspace{1in}
+
+3) For the two vectors that behaved differently, you should be able to write the eigenvector equation: $\textbf{A}\vec{v}=\lambda \vec{v}$. Find $\lambda_i$ for each pair of vectors.
+
+\vspace{.75in}
+
+\newpage
+
+\section*{Practice}
+
+Let's practice finding eigenvalues and eigenvectors.
+
+\vspace{0.1in}
+
+4) For each matrix, take the determinant $|\textbf{A}- \lambda \textbf{I}  | $ then set the resulting polynomial equal to 0 and solve for $\lambda$. (They should all be factorable, so even the $3 \times 3$s should not be too hard to do). Once you have found ALL the eigenvalues ($\lambda$s) find at least one eigenvector for each matrix.\\
+
+\begin{center}
+
+$\textbf{W}=\begin{bmatrix}[rr] 1 & 4\\-4&11 \end{bmatrix}$
+\hspace{0.3in}
+$\textbf{G}=\begin{bmatrix}[rrr] 1 & 1 & -2\\ -1 & 2 & 1\\ 0 & 1 & -1 \end{bmatrix}$
+\hspace{0.3in}
+$\textbf{R}=\begin{bmatrix}[rrr] 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \end{bmatrix}$
+
+\end{center}
+
+\vspace{6in}
+
+5) Go back and look at $\textbf{R}$.  What do you notice about the eigenvalues you found for \textbf{R}?  Can you generalize this to a property of certain types of matrices?
+
+\newpage
+
+\section*{Some Properties of Eigenvalues}
+
+\textit{ Note: We will find these for $2 \times 2$ matrices, but these properties generalize to any $n \times n$ matrix. }
+
+\vspace{0.2in}
+
+6) We find eigenvalues by solving: $|\textbf{A}- \lambda \textbf{I}  | =0 $. What happens if $\lambda = 0 $? What must be true about the matrix \textbf{A} for \textbf{A} to have eigenvalues of 0?
+
+\vspace{1.5in}
+
+7)a) Find $\textbf{W}^{T}$.
+
+\vspace{1in}
+
+b) What is the polynomial from $|\textbf{W}^{T}- \lambda \textbf{I}  | $ and how does it compare to the polynomial for $|\textbf{W}- \lambda \textbf{I}  | $?
+
+\vspace{1in}
+
+c) What can you say about the eigenvalues (and vectors) of $\textbf{A}$ and $\textbf{A}^{T}$?
+
+\vspace{0.75in}
+
+8)a) Find $\textbf{W}^{-1}$.
+
+\vspace{1in}
+
+b) What is the polynomial from $|\textbf{W}^{-1}- \lambda \textbf{I}  | $? Set the polynomial equal to 0, and solve for $\lambda$
+
+\vspace{1in}
+
+c) Look carefully, how do the eigenvalues of $\textbf{W}^{-1}$ relate to the eigenvalues of \textbf{W}?
+
+\end{flushleft}
+\end{document}

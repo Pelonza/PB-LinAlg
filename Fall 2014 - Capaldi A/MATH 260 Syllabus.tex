@@ -1,0 +1,265 @@
+\documentclass{article}
+
+%\input md_macros
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+% Set up page size
+% All margin dimensions measured from a point one inch from top and side
+% of page.  Dimensions shrink by about 2 percent
+
+% SIDE MARGINS:
+\hoffset=-1truein
+
+% VERTICAL SPACING:
+\topmargin 0pt \voffset=-1truein
+
+% DIMENSION OF TEXT:
+% Note 72pt~=1in
+\textheight=687pt% Height of text (including footnotes and figures,
+                         % excluding running head and foot).
+\textwidth=468pt          % Width of text line.
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{note}{Note}
+\newtheorem*{aside}{Aside}
+
+\theoremstyle{remark}
+\newtheorem*{notation}{Notation}
+
+\newenvironment{packed_enum}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}	
+	}{\end{enumerate}}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\textbf{Section Information: Linear Systems and Matrices (Math 260, Fall 2014)} \\
+\end{center}
+\vspace{.5cm}
+
+\noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Time \& Place:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+    \begin{tabular}{ll}
+		Section A & Tues 10:30 - 11:20 AM, GEM 227\\
+		Section B & Tues 1:30  - 2:20  PM, GEM 227\\
+		Section C & Tues 8:00  - 8:50  AM, GEM 227\\
+	\end{tabular}
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Instructor:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Alex Capaldi
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Contact Info:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Office: GEM 116
+	\newline Phone: 464-5196
+	\newline Email: alex.capaldi@valpo.edu
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Office Hours:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+  \begin{tabular}{ll}
+		Monday    & 2:30 - 3:20 PM\\
+		Tuesday   & 2:30 - 3:20 PM\\
+		Wednesday & 2:30 - 3:20 PM\\
+		Friday    & 12:30 PM - 1:20 PM\\
+	\end{tabular}
+	\\Also by appointment, or anytime my door is open.
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{An Inverted} \\ \textbf{Classroom:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	This class will be taught in an ``inverted classroom" (a.k.a. ``flipped") style.  Inverted classroom is a teaching style in which the ``lecturing" is done at home in the form of reading assignments and/or watching videos.  This frees class time up to focus on discussion, collaborative work, and engagement with the other activities that are traditionally done outside of class.
+	\vskip0.2in
+	The main reasons why we will invert our classroom:
+	\begin{itemize}
+		\item{To keep students engaged during class.}
+		\item{To let students adjust the pace at which they work and learn the material.}
+		\item{To teach students how to be independent learners.}
+		\item{To teach students how to collaborate in groups and facilitate peer instruction.}
+		\item{To improve student retention of material.}
+	\end{itemize}
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Class Preparation} \\ \textbf{Assignments:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Reading and video lecture assignments are posted on Blackboard for (nearly) every class period.  You are encouraged to ask questions (via email or visiting my office) about confusing subjects.  To verify that you have reviewed the assignment, a few, basic problems will be due at the start of class in the form of a Class Preparation Assignment (CPA).  These are posted on Blackboard.  CPAs are graded on completeness, not on correctness.  You must have done an ``honest effort" on each portion of each problem for credit, but not necessarily have the problem correct.
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{In Class} \\ \textbf{Activities:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	Class time will be spent working on more advanced problems from the section in groups.  If you have not done the CPA, you are dead weight for your group!  Students will be chosen at random or by instructor choice to present these problems near the end of the period to the entire class.  These presentations are not meant to be flawless.  Learning often occurs more from incorrect presentations than correct ones.  You are allowed and encouraged to correct your in activities after discussions resulting from the presentations of problems.  \textbf{For an inverted classroom to work, your active participation is required!.}
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+	\textbf{Homework:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	  There will be two kinds of homework assigned in this course - practice problems and problems to turn in.  Practice problems are for you to try and the answers are usually provided in the back of the textbok.  The latter type is what I will refer to as ``homework."  Unless mentioned otherwise, they are due the Friday immediately after they are assigned by 2:20 PM (turn them in in Friday's MATH 270 class or to my mailbox in GEM 111 or my office in GEM 116 if I'm there, but do NOT slide the homework under my office door).
+\end{minipage}
+
+\vskip0.2in
+\noindent 
+\begin{minipage}[t]{1.3in}
+\textbf{Exams:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+	There is a midterm exam and a final exam in this class. The test dates are as follows:
+	\begin{center}
+		\begin{tabular}{lll}
+	 		Midterm Exam: & Monday, October 6 & 5-8 PM\\
+		  Final Exam:   & Thursday, November 20 & 5-8 PM
+	 \end{tabular}
+	\end{center}
+Each of the two tests will be designed so that it can be completed in one hour, but you will have a three hour period from 5:00-8:00 PM in which to take it. The Final exam will be cumulative, but will be more heavily weighted toward new material.
+
+\vspace{0.2in}
+
+There will be no make-up tests without documentation of a university approved excuse.  For example, if you are sick on a test day, I expect to receive an e-mail letting me know you will be missing the test, and a doctor's note upon your return.  If you know in advance that you will not be able to take a test on the prescribed date, please see me at least one week in advance in order to make other arrangements.  If you have questions concerning how a test has been graded, they must be submitted in writing, along with the graded test, on the first class meeting following the test's return.
+
+\end{minipage}
+
+\vskip0.4in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Grading:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+\begin{center}
+	\begin{tabular}{ll}
+	  CPAs:                 & 10\%\\
+		Homework:             & 30\%\\
+		Midterm Exam:         & 30\%\\
+		Final Exam:           & 30\%
+	\end{tabular}
+\end{center}
+	Final grades are assigned according to the following scale:\\
+\begin{center}
+\begin{tabular}{rll}
+$93 \leq$ & A  &$ <\infty$\\
+$90 \leq$ & A- &$ <93$\\
+$87 \leq$ & B+ &$ <90$\\
+$83 \leq$ & B  &$ <87$\\
+$80 \leq$ & B- &$ <83$\\
+&Etc...&
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Honor Code} \\ \textbf{Policy:}
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+Authorized aid on CPAs and homework includes: (1) any help I might give; (2) general assistance from tutors and help sessions (meaning tutors may help you with procedures and concepts, but cannot do all the work on a specific problem for you); (3) informal collaborative discussions on assigned problems.  \textit{In all, any final product must CLEARLY be an individual effort}.
+
+\vspace{.2in}
+
+Authorized aid on the midterm and the final exam includes: your brain.  This means no calculators, cell phones, computers, classmates, or anything else are allowed.  Any changes or additions will be mentioned in class and in writing on the exam paper.
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Outside Help:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+Option 1: There are weekly dedicated help sessions for this course, schedule is TBD.  You will be able to walk-in and there will be a student coordinator available to help you, and/or you may use the session to study with your classmates.
+
+\vspace{.2in}
+
+Option 2: Walk-in or by-appointment peer tutoring services may be available for math students in this course seeking immediate individual tutoring support.  For additional information about tutor availability, visit www.valpo.edu/engineering/hesse or contact Laura Sanders at Laura.Sanders@valpo.edu, 219-464-5210. \\
+
+\vspace{.2in}
+
+Hesse Center Hours:\\
+
+\begin{tabular}{ll}
+Sunday & 7:00-10:00 PM\\
+Monday - Thursday & 10:30 AM - 5:30 PM and 7:00-10:00 PM\\
+Friday & 10:30 AM  - 2:30 PM\\
+Saturday & 2:00-5:00 PM
+\end{tabular}
+
+\vspace{.2in}
+
+Option 3: Tutoring services may be available for math students seeking to meet regularly with a peer tutor for weekly study assistance. To request a tutor through the Peer Tutoring Program, visit www.valpo.edu/academicsuccess, or contact Tricia White in the Academic Success Center at academic.success@valpo.edu, 219-464-5985.
+
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Disability Support Services:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+
+Please contact Dr.  Sherry DeMik, Director of Disability Support Services, at 219-464-5456, if you believe you have a disability that might require a reasonable accommodation in order for you to perform as expected in this class.  Dr. DeMik will work with you and me directly to make sure you receive any reasonable accommodation needed as the result of a disability.
+
+\end{minipage}
+
+\vskip0.2in \noindent
+\begin{minipage}[t]{1.3in}
+\textbf{Professionalism:} 
+\end{minipage}
+\begin{minipage}[t]{5.2in}
+Valparaiso University is a professional setting and all students, faculty and staff are expected to treat it as such.
+
+\vspace{0.2in}
+\textbf{Texting in class will result in a loss of 2\% of your final grade per incident!}  For example, you could go from a 91\% in the class (an A-) to an 89\% (a B+) by violating this rule.
+
+\vspace{0.2in}
+
+Additionally, students should approach communication with their instructors in a professional manner and not as if they are texting or instant messaging their friends.  An example of a professionally formatted email is as follows:
+\vspace{.2in}
+
+Dr. Capaldi,\\
+
+\vspace{.2in}
+
+I need some extra help with matrix row operations.  Do you have any free time to meet on Tuesday afternoon?\\
+
+\vspace{.2in}
+
+Thank you,\\
+Student Name
+
+\end{minipage}
+
+\end{document}

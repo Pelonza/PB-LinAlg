@@ -1,0 +1,203 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Activity 6:  Determinants and Cramer's Rule}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.75in}
+Directions:  Everyone should work on the assignment and should fill out their paper.  You are expected to make corrections based on what is presented on the board.  \\
+\large The worksheet is due by the end of the day (5pm). \normalsize \\ 
+If you need more explanations after class, you can read Chapter 3.4 of your textbook.\\
+\vspace{0.1in}
+\Large
+In-Class Learning Goals:\\
+\normalsize
+\begin{enumerate}
+\item Be able to find the determinant of a matrix (both $2\times 2$ AND nXn).
+\item Be able to find the `minor' and `cofactor' of elements in a matrix. 
+\item Be able to find solutions to a system using \textit{Cramer's Rule}.
+\item (Stretch) Discover several properties of determinants including if a matrix has an inverse.
+\end{enumerate}
+
+\vspace{0.1in}
+\begin{center}
+\section*{Warmup: Determinant of a $2 \times 2$}
+$|\textbf{A}| = \begin{vmatrix}[rr] a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} = a_{11} a_{22} - a_{12} a_{21}$\\
+\vspace{0.2in}
+\textit{Note:} You will need to have this formula memorized!\\
+\end{center}
+Find the determinant of the following matrix:\\
+\begin{center}
+$\begin{bmatrix}[rr]
+-3 & 1   \\
+4 & 2   
+\end{bmatrix}
+$
+\hspace{1in}
+$\begin{bmatrix}[rrr]
+3 & 0 & -1\\
+0 & 0 &  3 \\
+0 & 1 & 0
+\end{bmatrix}
+$
+\end{center}
+\vspace{2in}
+
+\newpage
+\begin{center}
+\section{Some Properties and Practice}
+\end{center}
+For \textbf{Activity 5} you found several inverses and transposes of matrices. Lets use them...\\
+\begin{center}
+$\textbf{H}=\begin{bmatrix}[rr]
+1 & 1\\
+4  & 1
+\end{bmatrix}$
+\hspace{0.5in}
+$\textbf{H}^{-1}=\left[
+\begin{array}{cc}
+- \frac{1}{3} & \frac{1}{3} \vspace{0.1in}\\
+
+\frac{4}{3} & - \frac{1}{3}
+\end{array} \right]$
+\hspace{0.5in}
+$
+\textbf{H}^{T}=\begin{bmatrix}[rr]
+1 & 4\\
+1  & 1
+\end{bmatrix}$
+\hspace{0.5in}
+$\textbf{G}=
+\begin{bmatrix}[rrr]
+3 & 0 & 3\\
+-1 & 2 & 1\\
+1 & 1 & 2
+\end{bmatrix}$\\
+\end{center}
+
+\vspace{0.1in}
+a) Find $|\textbf{H}|$.\\
+\vspace{0.8in}
+b) Find $|\textbf{H}^{-1}|$.\\
+\vspace{0.8in}
+c) Find $|\textbf{H}^{T}|$.\\
+\vspace{0.8in}
+d) Find $|\textbf{G}|$.\\
+\vspace{1in}
+e) Are any of the numbers above the same? Closely related? Try to write each as a generalized property (check these with me).
+\newpage
+\begin{center}
+\section{Finding Minors (and some $2 \times 2$ practice)}
+\small This method is only a little harder than visiting an elementary school... \normalsize
+\end{center}
+\textbf{Definition:} For the $n \times n$ matrix \textbf{A}, the \textit{minor $M_{ij}$} of $a_{ij}$ is an $(n-1) \times (n-1)$ matrix obtained by deleting the $i$th row and the $j$th column of \textbf{A}. \\
+\begin{center}
+$\textbf{A}=
+\begin{bmatrix}
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\bullet &\bullet &\bullet & \bullet \\
+\end{bmatrix}
+=
+\begin{bmatrix}[rrrr]
+1&2&3&1\\
+5&0&1&-2\\
+4&0&1&0\\
+2&0&3&1
+\end{bmatrix}
+$
+\hspace{0.4in}
+$\textbf{M}_{12}=
+\begin{bmatrix}
+\circ & \circ & \circ & \circ \\
+\bullet & \circ & \bullet & \bullet \\
+\bullet & \circ & \bullet & \bullet \\
+\bullet & \circ & \bullet & \bullet \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\bullet & \bullet & \bullet \\
+\bullet & \bullet & \bullet \\
+\bullet & \bullet & \bullet \\
+\end{bmatrix}
+=
+\begin{bmatrix}[rrr]
+5 & 1&-2\\
+4 & 1& 0\\
+2&3&1
+\end{bmatrix}$
+\end{center}
+a) Find the minor $\textbf{M}_{32}$ of \textbf{A}. To show your work, re-write \textbf{A} first...\\
+\vspace{1.5in}
+b) Lets find some minors of minors... \\
+(i) Find $\textbf{M}_{21}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+(ii) Find $\textbf{M}_{22}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+(iii) Find $\textbf{M}_{23}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+c) Find the determinant of...\\
+(i) $\textbf{M}_{21}$\\
+\vspace{0.75in}
+(ii) $\textbf{M}_{22}$\\
+\vspace{0.75in}
+(iii) $\textbf{M}_{23}$
+
+\newpage
+\begin{center}
+\section{Co-Factors}
+\end{center}
+\textbf{Definition:} The \textit{co-factor} of an element $a_{ij}$ is the scalar: $C_{ij}=(-1)^{i+j}|\textbf{M}_{ij}|$\\
+\vspace{0.1in}
+Notice that the co-factor is just the determinant of a minor, times $\pm 1$. We'll use this in the next section...
+a) Find $C_{21}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+b) Find $C_{22}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+c) Find $C_{23}$ of $\textbf{M}_{12}$\\
+\vspace{0.75in}
+d) Can you find $C_{12}$ of \textbf{A} (based on what you know now)? Why or why not?\\
+\vspace{1in}
+
+\begin{center}
+\section{Determinants of N x N matrices}
+\end{center}
+Lets start by finding the determinant of the 3x3 matrix $\textbf{M}_{12}$. \\
+To make our notation simpler, lets call $\textbf{M}_{12}$ matrix \textbf{D}.\\
+a) Find the following sum: \hspace{0.2in} $d_{21}*C_{21} + d_{22}*C_{22} + d_{23}*C_{23}$ \\
+\textit{Hint: You should get a single, scalar number.}\\
+\vspace{1in}
+b) Try writing the sum for (a) in summation notation (i.e. using: $\Sigma$).\\
+
+\newpage
+\LARGE \begin{center} Determinants of N x N matrices (cont.) \end{center} \normalsize
+Finding the determinant of an NxN matrix is a recursive process. The definition is:\\
+\vspace{0.1in}
+\textbf{Definition:} Choose a row $i$ or column $j$, then $|A|=\sum\limits^{n}_{(j \text{ or } i)} a_{ij} C_{ij} = \sum\limits^{n}_{j \text{ or } i} a_{ij} (-1)^{i+j} |\textbf{M}_{ij}| $\\
+\vspace{0.1in}
+Notice that $\textbf{M}_{ij}$ may not be a $2 \times 2$!! You might have to use this process several times. \\
+\vspace{0.1in}
+c) Using this definition find the determinant of our original \textbf{A} matrix. \\
+\textit{Hint: You should only need to do a few new multiplications and additions, you calculated most of it already.}\\
+\vspace{1in}
+
+\end{flushleft}
+\end{document}

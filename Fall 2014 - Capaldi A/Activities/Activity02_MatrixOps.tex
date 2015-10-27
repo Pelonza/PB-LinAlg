@@ -1,0 +1,125 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Systems and Matrices, Fall `14}\\
+	\bfseries{Activity 2:  Matrix Operations}\\
+%	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.25in}
+
+Matrices for today's problems:\\
+
+$\textbf{A}=\left[
+\begin{array}{c}
+	2\\
+	4\\
+	-1\\
+\end{array}
+\right]
+$
+\hspace{.1in}
+$\textbf{B}=\left[
+\begin{array}{ccc}
+3 & 2 & -5
+\end{array}\right]$
+\hspace{.1in}
+
+$\textbf{C}=\left[
+\begin{array}{cc}
+1 & 4\\
+-3 & 5
+\end{array}
+\right]
+$
+\hspace{.1in}
+$\textbf{D}=\left[
+\begin{array}{cc}
+2 & 1\\
+4 & 3
+\end{array}
+\right]$
+\hspace{.1in}
+$\textbf{E}=\left[
+\begin{array}{ccc}
+3 & 8 & 2\\
+-1 & x & x^2
+\end{array}
+\right]
+$
+
+\section*{Warmup: Constants and Matrices}
+
+Find $k\textbf{C}$ where $k$ is a constant. What is $k\textbf{C}$ if $k=3$?
+
+\vspace{2in}
+
+\section*{Problem 1:  Vectors, and Vectors with Matrices}
+
+a) Find the expected dimension of \textbf{AB}, \textbf{BI$_3$}, and \textbf{BE}.
+
+\newpage
+
+b) Now calculate each product.
+
+\vspace{5in}
+
+\section*{Problem 2: Matrix on Matrix}
+
+a) Find \textbf{CD}.
+
+\vspace{2in}
+
+b) Make a prediction (don't calculate yet): Is the statement:  $\textbf{CD} = \textbf{DC}$ true or false?
+
+\newpage
+
+c) Find \textbf{DC}. Were you correct?
+
+\vspace{1.5in}
+
+d) Can you find any two matrices (\textbf{A} and \textbf{B}) for which $\textbf{AB}=\textbf{BA}$?  Note that here, \textbf{A} and \textbf{B} are NOT the matrices given on page 1. \textit{Hint: This is a SPECIAL circumstance.}
+
+\vspace{1in}
+
+\section*{Problem 3: More Matrix on Matrix}
+
+a) Which of these are true for any generic matrices where the operations are well-defined (give some reasoning, you don't \textit{have} to prove them):\\
+$(\textbf{AB})\textbf{C}=\textbf{A}+\textbf{BC}$ \hspace{0.2in} $\textbf{A}(\textbf{B}+\textbf{C})=\textbf{AB}+\textbf{AC}$ \hspace{0.2in} $(\textbf{B}+\textbf{C})\textbf{A}=\textbf{AB}+\textbf{CA}$
+
+\vspace{2in}
+
+b) Under certain circumstances, we can raise a matrix to a power.  Consider the $m \times n$ matrix $\textbf{A}$.  Discuss at your table what some requirements on $\textbf{A}$ might be, and what the resultant dimensions of $\textbf{A}^{k}$ would be.
+
+\newpage
+
+c) Find $\textbf{CC}$.  This is equivalent to $\textbf{C}^2$.
+
+\vspace{1.5in}
+
+d) Find $\textbf{C}^3$. \textit{Hint: Use your result from (c) to reduce your work}
+
+\vspace{1.5in}
+
+e) Could you find $\textbf{E}^3$?  If you can, give its dimensions.  If you can't find it, explain why not?
+
+\vspace{0.75in}
+
+\section*{Problem 4: Transposing Matrices}
+
+We can find what's called the ``transpose" of a matrix by swapping the matrix's rows and columns.  More technically, to find the transpose of \textbf{A}, denoted by $\textbf{A}^\texttt{T}$ for all $i,j$ $[a_{ij}]^\texttt{T}=[a_{ji}]$.
+
+\vspace{0.2in}
+
+Find $\textbf{E}^\texttt{T}$.
+
+\end{flushleft}
+\end{document}

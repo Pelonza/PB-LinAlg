@@ -1,0 +1,53 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\oddsidemargin}{0in} \setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+\begin{flushleft}
+	\bfseries{MATH 260, Linear Algebra, Spring `14}\\
+	\bfseries{Homework 3 \& 4:  Matrices, RREF, and Solutions to Systems}\\
+	\bfseries{Honor Code:} \hspace{3.5in}\bfseries{Names:}\\
+\end{flushleft}
+\begin{flushleft}
+\vspace{.5in}
+
+\section{Homework}
+\LARGE Due Feb. 11th \\
+\normalsize
+\vspace{0.25in}
+On page 143: 14, 16, 18, 20, 22\\
+AND: Write \# 28 and \# 32 in matrix-vector form and as an augmented matrix.\\
+\vspace{0.25in}
+By converting each of these systems into augmented matrices, then putting the matrices in RREF, determine if the system has a unique, infinite solutions, or no solution.\\
+$\begin{array}{ccccc}
+x+&2y+& z& = &2\\
+2x-&4y-&3z& = &0\\
+-x+&6y-&4z& = &2\\
+x-&y& & = &4
+\end{array}
+$
+\hspace{0.35in}
+$\begin{array}{ccccc}
+x-& y+ & z &= 0\\
+x+&y& & = 0\\
+x+ & 2y & -z & = 0
+\end{array}$
+\hspace{0.35in}
+$\begin{array}{ccccc}
+x- & y- & z & = & 1\\
+2x+& 3y+ & z & = &2
+\end{array}$
+\end{flushleft}
+\end{document}
