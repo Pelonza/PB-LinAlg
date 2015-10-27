@@ -30,9 +30,12 @@ Fall 2014 - Capaldi -- Contains updated/revised CPAs and worksheets, without lea
 -----------
 
 Please feel free to fork, and use these, but provide attribution to:
-Karl Schmitt & Alex Capaldi, Valparaiso Unviersity 2014
+
+Karl Schmitt & Alex Capaldi, Valparaiso Unversity 2014
 
 -----------
 
-Suggestions, updates and revisions are welcome. You can contact me through GitHub or at karl-dot-schmitt@valpo-dot-edu
+Suggestions, updates and revisions are welcome. 
+
+You can contact me through GitHub or at karl-dot-schmitt@valpo-dot-edu
 
