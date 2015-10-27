@@ -10,9 +10,13 @@ Note that the course is only worth 1 credit hour, and largely serves our Enginee
 
 ----------
 The respository contains old course materials for running it using a "flipped" classroom style, or psuedo-inquiry based style. That is a typical course day consists of:
+
 1) A pre-class exercise (Class Preparation Assignment or CPA), sometimes include a video or readings from a textbook. 
+
 2) An In-class worksheet that explores the topic
+
 3) A post-class homework problem.
+
 ----------
 
 Not included in this repository are links to all the CPA videos etc. Many videos were drawn from either Khan Academy or PatrickJMT. At some point I may include a listing of these specific videos...
